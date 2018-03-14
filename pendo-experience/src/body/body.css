@@ -1,0 +1,52 @@
+.body-container {
+	
+	width: 100%;
+	height: 100%;
+	margin-left: 15%;
+	position: fixed;
+}
+
+
+.app-container {
+	width: 83%;
+	height: 100%;
+	margin: 1%;
+	position: fixed;
+}
+
+
+.settings-options {
+	float:right;
+
+}
+
+.settings-options svg {
+	margin: 15px 20px;
+	color: #4A90E2;
+}
+
+.vertical-menu {
+	height: 8%;
+	margin-right: 100px;
+	width: 100%;
+	overflow-x: hidden;
+	border: blue thin solid;
+}
+
+
+.search-box {
+	margin: 15px;
+	width: 30%;
+	height: 55%;
+	border-radius: 3px;
+	background-color: white;
+	border-style: solid;
+	border: thin #ccc solid;
+}
+
+.main-content {
+	border: red thin solid;
+	margin-top: 2%;
+	height: 100%;
+	background-color: pink;
+}
