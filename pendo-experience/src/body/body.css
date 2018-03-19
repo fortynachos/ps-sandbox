@@ -48,5 +48,7 @@
 	border: red thin solid;
 	margin-top: 2%;
 	height: 100%;
-	background-color: pink;
+	display: grid;
+	grid-template-columns: 30% 30% 40%;
+	grid-template-rows: 50% 50%;
 }

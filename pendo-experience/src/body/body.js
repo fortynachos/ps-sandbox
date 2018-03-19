@@ -1,5 +1,6 @@
 import React from 'react';
 import './body.css';
+import MetricsWidget from '../dashboard/metrics-widget.js';
 
 const Body = () => (
 	<div className="body-container">
@@ -13,7 +14,7 @@ const Body = () => (
 				</div>
 			</div>
 			<div className="main-content">
-				
+				<MetricsWidget />
 			</div>
 		</div>
 	</div>
