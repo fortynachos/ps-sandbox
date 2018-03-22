@@ -1,5 +1,5 @@
 import React from 'react';
-import './metrics-widget.css';
+import './dashboard.css';
 import { XYPlot, LineSeries, VerticalGridLines, HorizontalGridLines, XAxis, YAxis } from 'react-vis';
 import '../../node_modules/react-vis/dist/style.css';
 

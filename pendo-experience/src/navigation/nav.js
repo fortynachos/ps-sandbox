@@ -7,13 +7,23 @@ const Navigation = () => (
 
 		<div className="nav-bar">
 			<div className="logo">
-				LOGO
+				<h1>
+					CRM
+				</h1>
 			</div>
 			<ul className="nav-items">
-				<li className="nav-item">Dashboard</li>
-				<li className="nav-item">Accounts</li>
-				<li className="nav-item">Contacts</li>
-				<li className="nav-item">Opportunities</li>
+				<li className="nav-item">
+					<i className="fas fa-angle-double-right"></i> <span className="link-text">Dashboard</span>
+				</li>
+				<li className="nav-item">
+					<i className="fas fa-angle-double-right"></i> <span className="link-text">Accounts</span>
+				</li>
+				<li className="nav-item">
+					<i className="fas fa-angle-double-right"></i> <span className="link-text">Contacts</span>
+				</li>
+				<li className="nav-item">
+					<i className="fas fa-angle-double-right"></i> <span className="link-text">Opportunities</span>
+				</li>
 			</ul>
 		</div>
 		

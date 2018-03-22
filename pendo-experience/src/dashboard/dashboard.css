@@ -1,0 +1,50 @@
+.widget-container {
+	background-color: white;
+	margin: 15px;
+	border: #ccc thin solid;
+}
+
+
+#metrics {
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
+
+.widget-container h2 {
+	margin-left: 30px;
+}
+
+
+#list-view {
+	grid-column-start: 3;
+	grid-column-end: 4;
+	grid-row-start: 1;
+	grid-row-end: 3;
+}
+
+#forecast {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 2;
+	grid-row-end: 3;
+}
+
+
+.list-container {
+	margin: 0px 30px;
+	height: 8%;
+	background-color: grey;
+}
+
+.list-right {
+	float: right;
+	width: 50%;
+	height: 100%;
+	text-align: center;
+	background-color: #bbb;
+}
+
+.list-right p {
+	margin: 0px;
+	margin-top: 10%;
+}

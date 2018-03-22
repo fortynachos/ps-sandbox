@@ -1,6 +1,16 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
   background-color: #F7F9FA;
+}
+
+
+
+@font-face {
+	font-family: 'Proxima Nova';
+	src: "../public/PendoFonts/proximanova-regular.otf";
+}
+
+body {
+	font-family: 'Proxima Nova';
 }
