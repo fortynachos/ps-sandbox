@@ -1,10 +1,6 @@
 import React from 'react';
 import './body.css';
-import MetricsWidget from '../dashboard/metrics-widget.js';
-import ListView from '../dashboard/dashboard-list-view.js';
-import Forecast from '../dashboard/forecast.js';
-import QuotaAttainment from '../dashboard/quota-attainment.js';
-
+import Main from '../main.js';
 
 
 const Body = () => (
@@ -17,12 +13,18 @@ const Body = () => (
 					<i className="fas fa-bell fa-2x"></i>
 					<i className="fas fa-user fa-2x"></i>
 				</div>
+
+			</div>
+			<div className="name-and-new">
+				<h1>
+					Dashboard
+				</h1>
+				<button id="add-new">
+					Add New
+				</button>
 			</div>
 			<div className="main-content">
-				<MetricsWidget />
-				<ListView />
-				<Forecast />
-				<QuotaAttainment />
+				<Main />
 			</div>
 		</div>
 	</div>

@@ -4,6 +4,16 @@
 	border: #ccc thin solid;
 }
 
+main {
+	height: 90%;
+}
+.dashboard-container {
+	width: 100%;
+	display: grid;
+	height: 100%;
+	grid-template-columns: 28% 28% 44%;
+	grid-template-rows: 50% 50%;
+}
 
 #metrics {
 	grid-column-start: 1;
