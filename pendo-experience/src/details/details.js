@@ -4,7 +4,7 @@ import { Card, Tabs, Input, Button, Timeline } from 'antd';
 
 const TabPane = Tabs.TabPane;
 const { TextArea } = Input;
-const TimelineItem = Timeline.item;
+
 /*
 	- Then use timeline as the bottom right part
 			SOEMTHING IS BREAKING HERE
@@ -39,26 +39,34 @@ const Details = () => (
 				Role:
 			</p>
 		</Card>
-		<Tabs defaultActiveKey="2" id="entry-tabs" type="card" tabBarExtraContent={<Button>Submit</Button>}>
+		<Tabs defaultActiveKey="1" id="entry-tabs" type="card" tabBarExtraContent={<Button>Submit</Button>}>
 			<TabPane tab="New Note" key="1">
 				<TextArea rows={4} />
 			</TabPane>
-			<TabPane tab="Email" key="2">Content of Tabe Pane 1</TabPane>
-			<TabPane tab="Call" key="3">Content of Tabe Pane 1</TabPane>
-			<TabPane tab="Log Activity" key="4">Content of Tabe Pane 1</TabPane>
-			<TabPane tab="Create Task" key="5">Content of Tabe Pane 1</TabPane>
-			<TabPane tab="Schedule" key="6">Content of Tabe Pane 1</TabPane>
+			<TabPane tab="Email" key="2">
+				<TextArea rows={4} />
+			</TabPane>
+			<TabPane tab="Call" key="3">
+				<TextArea rows={4} />
+			</TabPane>
+			<TabPane tab="Log Activity" key="4">
+				<TextArea rows={4} />
+			</TabPane>
+			<TabPane tab="Create Task" key="5">
+				<TextArea rows={4} />
+			</TabPane>
+			<TabPane tab="Schedule" key="6">
+				<TextArea rows={4} />
+			</TabPane>
 		</Tabs>
+		<Timeline>
+		 	<Timeline.Item>Thing 1</Timeline.Item>
+		 	<Timeline.Item>Thing 2</Timeline.Item>
+		 	<Timeline.Item>Thing 3</Timeline.Item>
+		 	<Timeline.Item>Thing 4</Timeline.Item>
+		 </Timeline>
 	</div>
 	);
 
 
 export default Details;
-
-		// <Timeline>
-		// 	<Timeline.item>asdfasdf</Timeline.item>
-		// 	<Timeline.item>asdf</Timeline.item>
-		// 	<Timeline.item>asdf</Timeline.item>
-		// 	<Timeline.item>asfd</Timeline.item>
-		// 	<Timeline.item>asd</Timeline.item>
-		// </Timeline>
