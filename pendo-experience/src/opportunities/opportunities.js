@@ -51,7 +51,7 @@ const data = [{
 }];
 
 const Opportunities = () => (
-	<Table columns={columns} dataSource={data} />
+	<Table columns={columns} dataSource={data} style={{margin: "0px 15px"}}/>
 );
 
 

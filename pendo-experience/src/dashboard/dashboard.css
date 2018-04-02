@@ -4,6 +4,10 @@
 	border: #ccc thin solid;
 }
 
+.ant-card {
+	margin: 8px !important;
+}
+
 main {
 	height: 90%;
 }

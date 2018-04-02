@@ -1,6 +1,6 @@
 import React from 'react';
 import './dashboard.css';
-import { Card, Table, Icon, Divider } from 'antd';
+import { Card, Table } from 'antd';
 
 
 const columns = [{
@@ -14,21 +14,40 @@ const columns = [{
   key: 'age',
 }];
 
-const data = [{
-  key: '1',
-  name: 'John Brown',
-  age: 32,
-}, {
-  key: '2',
-  name: 'Jim Green',
-  age: 42,
-}, {
-  key: '3',
-  name: 'Joe Black',
-  age: 32,
-}];
+const data = [
+  {
+    key: '1',
+    name: 'John Brown',
+    age: 32,
+  }, 
+  {
+    key: '2',
+    name: 'Jim Green',
+    age: 42,
+  }, 
+  {
+    key: '3',
+    name: 'Joe Black',
+    age: 32,
+  },
+  {
+    key: '1',
+    name: 'John Brown',
+    age: 32,
+  }, 
+  {
+    key: '2',
+    name: 'Jim Green',
+    age: 42,
+  }, 
+  {
+    key: '3',
+    name: 'Joe Black',
+    age: 32,
+  }
+];
 
-var i = 0;
+
 
 
 // const ListView = () => (
@@ -72,8 +91,8 @@ var i = 0;
 
 
 const ListView = () => (
-	<Card title="Open Opportunities" extra={<a>More</a>}>
-		<Table columns={columns} dataSource={data} />
+	<Card title="Open Opportunities" extra={<a>More</a>} id="list-view">
+		<Table columns={columns} dataSource={data} size="middle"/>
 	</Card>
 	)
 

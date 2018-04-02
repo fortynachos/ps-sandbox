@@ -4,7 +4,7 @@ import { Card } from 'antd';
 
 const Forecast = () => (
 
-		<Card title="Forecast" extra={<a>More</a>} >
+		<Card title="Forecast" extra={<a>More</a>} id="forecast">
 		</Card>
 	);
 
