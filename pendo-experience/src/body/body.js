@@ -1,17 +1,19 @@
 import React from 'react';
-import './body.css';
 import Main from '../main.js';
+import { Input, Button, Icon } from 'antd';
+import './body.css';
+const Search = Input.Search;
 
 
 const Body = () => (
 	<div className="body-container">
 		<div className="app-container">
 			<div className="vertical-menu">
-				<input type="text" name="search" className="search-box" placeholder="Search"/>
+				<Search placeholder="Search" enterButton onSearch={value => console.log(value)} />
 				<div className="settings-options">
-					<i className="fas fa-envelope fa-2x"></i>
-					<i className="fas fa-bell fa-2x"></i>
-					<i className="fas fa-user fa-2x"></i>
+					<Icon type="message" />
+					<Icon type="notification" />
+					<Icon type="user" />
 				</div>
 
 			</div>
@@ -19,9 +21,9 @@ const Body = () => (
 				<h1>
 					Dashboard
 				</h1>
-				<button id="add-new">
+				<Button type='primary' size="large">
 					Add New
-				</button>
+				</Button>
 			</div>
 			<div className="main-content">
 				<Main />

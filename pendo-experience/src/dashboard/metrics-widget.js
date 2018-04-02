@@ -2,7 +2,7 @@ import React from 'react';
 import './dashboard.css';
 import { XYPlot, LineSeries, VerticalGridLines, HorizontalGridLines, XAxis, YAxis } from 'react-vis';
 import '../../node_modules/react-vis/dist/style.css';
-
+import { Card } from 'antd';
 const data = [
   {x: 0, y: 8},
   {x: 1, y: 5},
@@ -21,19 +21,8 @@ const data = [
 
 
 const MetricsWidget = () => (
-	<div className="widget-container" id="metrics">
-		<h3>
-			Metrics
-		</h3>
-		<XYPlot height={250} width={500}>
-			<LineSeries data={data} />
-			<VerticalGridLines />
-			<HorizontalGridLines />
-			<XAxis />
-			<YAxis />
-        </XYPlot>
-	</div>
-
+	<Card title="Metrics" extra={<a>More</a>}>
+	</Card>
 );	
 
 

@@ -1,12 +1,11 @@
 import React from 'react';
 import './dashboard.css';
+import { Card } from 'antd';
 
 const Forecast = () => (
-	<div className="widget-container" id="forecast">
-		<h3>
-			Forecast
-		</h3>
-	</div>
+
+		<Card title="Forecast" extra={<a>More</a>} >
+		</Card>
 	);
 
 

@@ -16,12 +16,12 @@
 
 .settings-options {
 	float:right;
-
 }
 
-.settings-options svg {
-	margin: 15px 20px;
-	color: #4A90E2;
+.settings-options i {
+	color: #1890ff;
+	margin: 10px;
+	font-size: 32px;
 }
 
 .vertical-menu {
@@ -31,16 +31,9 @@
 	overflow-x: hidden;
 }
 
-
-
-.search-box {
+.ant-input-search {
+	width: 50%;
 	margin: 15px;
-	width: 30%;
-	height: 55%;
-	border-radius: 3px;
-	background-color: white;
-	border-style: solid;
-	border: thin #ccc solid;
 }
 
 .main-content {
@@ -54,25 +47,4 @@
 	margin: 0px 15px;
 	justify-content: space-between;
 	align-items: baseline;
-}
-
-
-#add-new {
-	padding: 0px;
-	color: #fff;
-	cursor: pointer;
-	border-radius: 3px;
-	font-weight: 900;
-	padding: 13px 65px;
-	background: #00b4ff;
-	border: 0;
-	font-size: 12px;
-	box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-	transition: all .15s ease;
-}
-
-#add-new:hover {
-	background-color: #1dc5ff;
-	box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
-	transform: translateY(-2px);
 }
