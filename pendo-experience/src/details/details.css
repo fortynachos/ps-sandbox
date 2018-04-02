@@ -1,0 +1,22 @@
+.details-container {
+	display: grid;
+	grid-template-columns: 25% 10% 65%;
+	grid-template-rows: 20% 10% 10% 10% 10% 10% 10% 10% 10%;
+}
+
+
+#quick-info {
+	grid-row-start: 1;
+	grid-row-end: 3;
+}
+
+
+#additional-info {
+	grid-row-start: 4;
+}
+
+.ant-tabs {
+	grid-column-start: 3;
+	grid-row-start: 1;
+	grid-row-end: 4;
+}
