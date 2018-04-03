@@ -50,9 +50,9 @@ const data = [{
   address: 'Sidney No. 1 Lake Park',
 }];
 
-const Accounts = () => (
-	<Table columns={columns} dataSource={data} />
+const Contacts = () => (
+	<Table columns={columns} dataSource={data}  style={{margin: "0px 15px"}}/>
 );
 
 
-export default Accounts;
+export default Contacts;

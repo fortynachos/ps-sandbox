@@ -1,11 +1,11 @@
 import React from 'react';
-import Main from '../main.js';
+import Main from '../../main.js';
 import { Input, Button, Icon } from 'antd';
 import './body.css';
 const Search = Input.Search;
 
 
-const Body = () => (
+const Body = ({title}) => (
 	<div className="body-container">
 		<div className="app-container">
 			<div className="vertical-menu">
@@ -19,9 +19,9 @@ const Body = () => (
 			</div>
 			<div className="name-and-new">
 				<h1>
-					Dashboard
+					{title}
 				</h1>
-				<Button type='primary' size="large">
+				<Button type='primary' size="large" id="add-new">
 					Add New
 				</Button>
 			</div>

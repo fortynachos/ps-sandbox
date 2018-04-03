@@ -31,17 +31,27 @@ const data = [
     age: 32,
   },
   {
-    key: '1',
+    key: '4',
     name: 'John Brown',
     age: 32,
   }, 
   {
-    key: '2',
+    key: '5',
     name: 'Jim Green',
     age: 42,
   }, 
   {
-    key: '3',
+    key: '6',
+    name: 'Joe Black',
+    age: 32,
+  },
+  {
+    key: '8',
+    name: 'Jim Green',
+    age: 42,
+  }, 
+  {
+    key: '9',
     name: 'Joe Black',
     age: 32,
   }

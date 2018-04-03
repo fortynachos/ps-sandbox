@@ -46,6 +46,13 @@
 	display: flex;
 	margin: 0px 15px;
 	justify-content: space-between;
-	align-items: baseline;
+}
+
+.name-and-new h1{
+	font-size: 40px;
+}
+
+#add-new {
+	margin-top: 12px;
 }
 

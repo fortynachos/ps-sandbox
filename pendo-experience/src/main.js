@@ -1,11 +1,11 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Dashboard from './dashboard/dashboard.js';
-import Accounts from './accounts/accounts.js';
-import Contacts from './contacts/contacts.js';
-import Opportunities from './opportunities/opportunities.js';
-import Details from './details/details.js';
+import Dashboard from './components/dashboard/dashboard.js';
+import Accounts from './components/accounts/accounts.js';
+import Contacts from './components/contacts/contacts.js';
+import Opportunities from './components/opportunities/opportunities.js';
+import Details from './components/details/details.js';
 
 const Main = () => (
 	<main>

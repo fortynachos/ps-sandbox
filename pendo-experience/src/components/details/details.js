@@ -6,14 +6,7 @@ const TabPane = Tabs.TabPane;
 const { TextArea } = Input;
 
 /*
-	- Then use timeline as the bottom right part
-			SOEMTHING IS BREAKING HERE
-
-
-
-	- Use some sort of input box for the top
-	with tabs
-	- should be simple
+	Type in New note and add to Timeline Item
 */
 
 

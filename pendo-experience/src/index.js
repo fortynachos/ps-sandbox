@@ -6,15 +6,19 @@ import registerServiceWorker from './registerServiceWorker';
 
 import { BrowserRouter } from 'react-router-dom';
 
-
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import rootReducer from './reducers.js';
+import { applyMiddleware, createStore } from 'redux';
+import logger from 'redux-logger';
+import rootReducer from './reducers';
 
 import 'antd/dist/antd.css';
+import '../node_modules/react-vis/dist/style.css';
 
-
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, 
+	applyMiddleware(
+		logger
+		)
+	);
 
 
 
