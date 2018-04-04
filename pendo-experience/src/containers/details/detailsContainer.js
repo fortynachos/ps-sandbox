@@ -1,21 +1,25 @@
 import { connect } from 'react-redux';
 import Details from '../../components/details/details.js';
-import { updateDetailsInputValue } from '../../actions';
+import { updateDetailsInputValue, addPostToTimeline } from '../../actions';
 
 
 
 
 const mapStateToProps = (state) => {
 	return {
-		inputValue: state.TimelineReducer
+		inputValue: state.TimelineReducer.inputValue,
+		timelinePosts: state.TimelineReducer.timelinePosts
 	}
 };
 
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		onDetailsSubmit: (text) => {
+		onDetailsChange: (text) => {
 			dispatch(updateDetailsInputValue(text));
+		},
+		onDetailsSubmit: (icon, text) => {
+			dispatch(addPostToTimeline(icon, text));
 		}
 	}
 };
