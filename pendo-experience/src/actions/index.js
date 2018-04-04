@@ -3,4 +3,7 @@ export const changePageTitle = text => ({
 	text
 });
 
-
+export const updateDetailsInputValue = (text) => ({
+	type: 'UPDATE_DETAILS_INPUT_VALUE',
+	text
+});

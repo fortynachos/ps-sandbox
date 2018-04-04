@@ -18,6 +18,11 @@
 	float:right;
 }
 
+.vertical-menu {
+	overflow:hidden;
+}
+
+
 .settings-options i {
 	color: #1890ff;
 	margin: 10px;

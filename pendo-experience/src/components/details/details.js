@@ -1,6 +1,6 @@
 import React from 'react';
 import './details.css';
-import { Card, Tabs, Input, Button, Timeline } from 'antd';
+import { Card, Tabs, Input, Button, Timeline, Icon } from 'antd';
 
 const TabPane = Tabs.TabPane;
 const { TextArea } = Input;
@@ -11,7 +11,7 @@ const { TextArea } = Input;
 
 
 
-const Details = () => (
+const Details = ({inputValue, onDetailsSubmit}) => (
 	<div className="details-container">
 		<Card title="Quick Information" id="quick-info">
 			<p>
@@ -32,9 +32,18 @@ const Details = () => (
 				Role:
 			</p>
 		</Card>
-		<Tabs defaultActiveKey="1" id="entry-tabs" type="card" tabBarExtraContent={<Button>Submit</Button>}>
+		<Tabs 
+			defaultActiveKey="1" 
+			d="entry-tabs" 
+			type="card" 
+			tabBarExtraContent={
+				<Button onClick={() => console.log(inputValue)}>
+					Submit
+				</Button>
+			}
+		>
 			<TabPane tab="New Note" key="1">
-				<TextArea rows={4} />
+				<TextArea rows={4} onChange={e => onDetailsSubmit(e.target.value)}/>
 			</TabPane>
 			<TabPane tab="Email" key="2">
 				<TextArea rows={4} />
@@ -53,10 +62,12 @@ const Details = () => (
 			</TabPane>
 		</Tabs>
 		<Timeline>
-		 	<Timeline.Item>Thing 1</Timeline.Item>
-		 	<Timeline.Item>Thing 2</Timeline.Item>
-		 	<Timeline.Item>Thing 3</Timeline.Item>
-		 	<Timeline.Item>Thing 4</Timeline.Item>
+		 	<Timeline.Item dot={<Icon type="form" />}>Thing 1</Timeline.Item>
+		 	<Timeline.Item dot={<Icon type="mail" />}>Thing 2</Timeline.Item>
+		 	<Timeline.Item dot={<Icon type="phone" />}>Thing 3</Timeline.Item>
+		 	<Timeline.Item dot={<Icon type="tool" />}>Thing 4</Timeline.Item>
+		 	<Timeline.Item dot={<Icon type="check-circle-o" />}>Thing 5 </Timeline.Item>
+		 	<Timeline.Item dot={<Icon type="calendar" />}>Thing 6</Timeline.Item>
 		 </Timeline>
 	</div>
 	);
