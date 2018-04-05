@@ -25,6 +25,21 @@ main {
 	grid-column-end: 3;
 }
 
+
+
+#list-view .ant-card-body {
+	padding: 16px;
+}
+
+#metrics .ant-card-body, #forecast .ant-card-body, #quota .ant-card-body {
+	padding: 8px;
+}
+
+.VictoryContainer {
+	width: 60% !important;
+	height: 50% !important;
+}
+
 .widget-container h2 {
 	margin-left: 30px;
 }
