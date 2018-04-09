@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Forecast from '../../components/dashboard/forecast.js';
+import Pipeline from '../../components/dashboard/pipeline.js';
 
 
 const mapStateToProps = (state) => {
@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 
 
 
-const FinalPipeline = connect(mapStateToProps)(Forecast);
+const FinalPipeline = connect(mapStateToProps)(Pipeline);
 
 
 export default FinalPipeline;
