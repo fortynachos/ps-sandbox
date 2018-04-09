@@ -6,7 +6,7 @@ import { combineReducers } from 'redux';
 const rootReducer = combineReducers({
 	Navigation,
 	TimelineReducer,
-	accountReducer
+	accountReducer,
 });
 
 export default rootReducer;
