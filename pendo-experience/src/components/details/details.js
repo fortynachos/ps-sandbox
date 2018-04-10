@@ -9,9 +9,35 @@ const { TextArea } = Input;
 	Type in New note and add to Timeline Item
 */
 
+const tabsArray = [
+	{
+		tab: "New Note",
+		key: "1"
+	},
+	{
+		tab: "Email",
+		key: "2"
+	},
+	{
+		tab: "Call",
+		key: "3"
+	},
+	{
+		tab: "Log Activity",
+		key: "4"
+	},
+	{
+		tab: "Create Task",
+		key: "5"
+	},
+	{
+		tab: "Schedule",
+		key: "6"
+	},
+]
 
 
-const Details = ({inputValue, onDetailsSubmit}) => (
+const Details = ({inputValue, onDetailsSubmit, onDetailsChange,timelinePosts}) => (
 	<div className="details-container">
 		<Card title="Quick Information" id="quick-info">
 			<p>
@@ -35,39 +61,37 @@ const Details = ({inputValue, onDetailsSubmit}) => (
 		<Tabs 
 			defaultActiveKey="1" 
 			d="entry-tabs" 
-			type="card" 
+			type="card"
 			tabBarExtraContent={
-				<Button onClick={() => console.log(inputValue)}>
+				<Button onClick={() => {
+					let activeTabHTML = document.getElementsByClassName('ant-tabs-tab-active')[0].innerHTML;
+					onDetailsSubmit(activeTabHTML, inputValue);
+				}}>
 					Submit
 				</Button>
 			}
 		>
-			<TabPane tab="New Note" key="1">
-				<TextArea rows={4} onChange={e => onDetailsSubmit(e.target.value)}/>
-			</TabPane>
-			<TabPane tab="Email" key="2">
-				<TextArea rows={4} />
-			</TabPane>
-			<TabPane tab="Call" key="3">
-				<TextArea rows={4} />
-			</TabPane>
-			<TabPane tab="Log Activity" key="4">
-				<TextArea rows={4} />
-			</TabPane>
-			<TabPane tab="Create Task" key="5">
-				<TextArea rows={4} />
-			</TabPane>
-			<TabPane tab="Schedule" key="6">
-				<TextArea rows={4} />
-			</TabPane>
+			{
+				tabsArray.map(tab => {
+					return (
+						<TabPane tab={tab.tab} key={tab.key}>
+							<TextArea 
+								rows={4} 
+								className="timeline-entry" 
+								value={inputValue} 
+								onChange={e => onDetailsChange(e.target.value)}
+							/>
+						</TabPane>
+						);
+				})
+			}
 		</Tabs>
 		<Timeline>
-		 	<Timeline.Item dot={<Icon type="form" />}>Thing 1</Timeline.Item>
-		 	<Timeline.Item dot={<Icon type="mail" />}>Thing 2</Timeline.Item>
-		 	<Timeline.Item dot={<Icon type="phone" />}>Thing 3</Timeline.Item>
-		 	<Timeline.Item dot={<Icon type="tool" />}>Thing 4</Timeline.Item>
-		 	<Timeline.Item dot={<Icon type="check-circle-o" />}>Thing 5 </Timeline.Item>
-		 	<Timeline.Item dot={<Icon type="calendar" />}>Thing 6</Timeline.Item>
+			{timelinePosts.map(item => {
+					return <Timeline.Item key={item.key} dot={<Icon type={item.type} />}>{item.entry}</Timeline.Item>
+					}
+				)
+			}
 		 </Timeline>
 	</div>
 	);
