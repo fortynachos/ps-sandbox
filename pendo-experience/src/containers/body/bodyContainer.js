@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import Body from '../../components/body/body.js';
 
-
 const mapStateToProps = (state) => {
 	return {
 		title: state.Navigation
@@ -9,5 +8,5 @@ const mapStateToProps = (state) => {
 }
 
 
-const FinalBody = connect(mapStateToProps)(Body);
+const FinalBody = connect(mapStateToProps, null)(Body);
 export default FinalBody;

@@ -5,7 +5,7 @@ import './body.css';
 const Search = Input.Search;
 
 
-const Body = ({title}) => (
+const Body = (props) => (
 	<div className="body-container">
 		<div className="app-container">
 			<div className="vertical-menu">
@@ -19,7 +19,7 @@ const Body = ({title}) => (
 			</div>
 			<div className="name-and-new">
 				<h1>
-					{title}
+					{props.title}
 				</h1>
 				<Button type='primary' size="large" id="add-new">
 					Add New
