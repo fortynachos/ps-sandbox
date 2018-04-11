@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 export const changePageTitle = text => ({
 	type: 'UPDATE_PAGE_TITLE',
 	text
@@ -24,4 +22,3 @@ export const addPostToTimeline = (icon, entry) => ({
 		icon: icons[icon],
 		entry
 });
-
