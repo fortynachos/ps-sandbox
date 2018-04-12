@@ -1,6 +1,12 @@
 import { connect } from 'react-redux';
 import Details from '../../components/details/details.js';
-import { updateDetailsInputValue, addPostToTimeline } from '../../actions';
+import {
+	updateDetailsInputValue,
+	addPostToTimeline,
+	requestDetailsData,
+	fetchDetails,
+	changePageTitle
+} from '../../actions';
 
 
 
@@ -8,7 +14,10 @@ import { updateDetailsInputValue, addPostToTimeline } from '../../actions';
 const mapStateToProps = (state) => {
 	return {
 		inputValue: state.TimelineReducer.inputValue,
-		timelinePosts: state.TimelineReducer.timelinePosts
+		timelinePosts: state.TimelineReducer.timelinePosts,
+		quickInfo: state.DetailsInformationReducer.quickInfo,
+		additionalInfo: state.DetailsInformationReducer.additionalInfo,
+		loading: state.DetailsInformationReducer.loading
 	}
 };
 
@@ -20,6 +29,15 @@ const mapDispatchToProps = (dispatch) => {
 		},
 		onDetailsSubmit: (icon, text) => {
 			dispatch(addPostToTimeline(icon, text));
+		},
+		onDetailsRequest: (url) => {
+			dispatch(requestDetailsData(url));
+		},
+		onDetailsLoad: (url) => {
+			dispatch(fetchDetails(url));
+		},
+		onTitleChange: (text) => {
+			dispatch(changePageTitle(text));
 		}
 	}
 };

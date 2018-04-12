@@ -16,6 +16,8 @@ let initContacts = [{
 }];
 
 
+
+
 const ContactReducer = (state = initContacts, action) =>  {
     switch (action.type) {
       case "something":
