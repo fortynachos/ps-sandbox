@@ -10,6 +10,19 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyD_kfqM2fmM6G8YViiJISqlPX-cI-nyvOI",
+        authDomain: "pendo-experience-39733.firebaseapp.com",
+        databaseURL: "https://pendo-experience-39733.firebaseio.com",
+        projectId: "pendo-experience-39733",
+        storageBucket: "pendo-experience-39733.appspot.com",
+        messagingSenderId: "467701926155"
+      };
+      firebase.initializeApp(config);
+    </script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.

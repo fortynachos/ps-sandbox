@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 import Body from '../../components/body/body.js';
+import { withRouter } from 'react-router-dom';
+
 
 const mapStateToProps = (state) => {
 	return {
@@ -8,5 +10,5 @@ const mapStateToProps = (state) => {
 }
 
 
-const FinalBody = connect(mapStateToProps, null)(Body);
+const FinalBody = withRouter(connect(mapStateToProps, null)(Body));
 export default FinalBody;

@@ -12,7 +12,7 @@
 
 
 #additional-info {
-	grid-row-start: 4;
+	grid-row-start: 3;
 }
 
 .ant-tabs {
@@ -23,9 +23,13 @@
 
 .ant-timeline {
 	grid-column-start: 3;
-	grid-row-start: 4;
+	grid-row-start: 3;
 }
 
 .ant-card {
 	margin-top: 0px !important;
+}
+
+#quick-info {
+	text-align: center;
 }

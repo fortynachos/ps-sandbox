@@ -3,16 +3,16 @@ import { Switch, Route } from 'react-router-dom';
 import Dashboard from './components/dashboard/dashboard.js';
 import accountList from './containers/accounts/accountsContainer.js';
 import FinalContacts from './containers/contacts/contactsContainer.js';
-import Opportunities from './components/opportunities/opportunities.js';
+import FinalOpportunities from './containers/opportunities/opportunitiesContainer.js';
 import FinalDetails from './containers/details/detailsContainer.js';
 
 const Main = () => (
 	<main>
 		<Switch>
 			<Route exact path ='/' component={Dashboard}/>
-			<Route path='/accounts' component={accountList} />
-			<Route path='/contacts' component={FinalContacts} />
-			<Route path='/opportunities' component={Opportunities} />
+			<Route exact path='/accounts' component={accountList} />
+			<Route exact path='/contacts' component={FinalContacts} />
+			<Route exact path='/opportunities' component={FinalOpportunities} />
 			<Route path='/*/*/details' component={FinalDetails} />
 		</Switch>
 	</main>
