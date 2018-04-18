@@ -11,7 +11,8 @@ export default class Body extends React.Component {
 		super(props);
 
 		this.state = {
-			visible: false
+			visible: false,
+			OKLoading: false
 		}
 	}
 
@@ -27,6 +28,18 @@ export default class Body extends React.Component {
 		this.setState({
 			visible: false
 		})
+	}
+	_onOK(e) {
+		e.preventDefault();
+		this.setState({
+			OKLoading: true
+		});
+		setTimeout(() => {
+			this.setState({
+				OKLoading: false,
+				visible: false
+			})
+		},1000);
 	}
 
 	render() {
@@ -50,9 +63,10 @@ export default class Body extends React.Component {
 							Add New
 						</Button>
 						<Modal
-							title="Basic Modal"
+							title="Create New"
 							visible={this.state.visible}
-							onOk={(e) => this._onCancel(e)}
+							onOk={(e) => this._onOK(e)}
+							confirmLoading={this.state.OKLoading}
 							onCancel={(e) => this._onCancel(e)}
 						>
 							<Form layout="vertical">
@@ -67,7 +81,22 @@ export default class Body extends React.Component {
 									</Select>
 								</FormItem>
 								<FormItem>
-									<Input placeholder="Name"></Input>
+									<h3>
+										Name:
+									</h3>
+									<Input></Input>
+								</FormItem>
+								<FormItem>
+									<h3>
+										Address:
+									</h3>
+									<Input></Input>
+								</FormItem>
+								<FormItem>
+									<h3>
+										Phone #:
+									</h3>
+									<Input></Input>
 								</FormItem>
 							</Form>
 						</Modal>

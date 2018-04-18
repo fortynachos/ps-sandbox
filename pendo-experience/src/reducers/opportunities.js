@@ -18,19 +18,19 @@ let initContacts = [{
 
 
 
-const ContactReducer = (state = {
-  contacts: initContacts,
+const OpportunitiesReducer = (state = {
+  opportunities: initContacts,
   loading: false
 }, action) =>  {
     switch (action.type) {
-      case "REQUEST_CONTACTS_DATA":
+      case "REQUEST_OPPORTUNITIES_DATA":
         return Object.assign({}, state, {
           loading: action.loading
         });
-      case "RECEIVED_CONTACTS_DATA":
+      case "RECEIVED_OPPORTUNITIES_DATA":
         return Object.assign({}, state, {
           loading: action.loading,
-          contacts: action.json
+          opportunities: action.json
         })
       default:
         return state
@@ -38,4 +38,4 @@ const ContactReducer = (state = {
 }
 
 
-export default ContactReducer;
+export default OpportunitiesReducer;

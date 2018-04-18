@@ -11,7 +11,7 @@ import { applyMiddleware, createStore } from 'redux';
 import logger from 'redux-logger';
 import rootReducer from './reducers';
 import thunk from 'redux-thunk';
-
+import axios from 'axios';
 import 'antd/dist/antd.css';
 
 const store = createStore(
@@ -22,6 +22,17 @@ const store = createStore(
 		)
 	);
 
+//You have to use the API Key made here, because this allows CORS
+//Instead of doing axios.get
+//Do RestDBAxios.get() instead to get what you want
+//Make sure to import it in though
+export const RestDBAxios = axios.create({
+	baseURL: 'https://petest-9f02.restdb.io/rest/',
+	headers: {
+		"x-apikey": "5ad6732125a622ae4d5283ab",
+	},
+	responseType: 'json',
+});
 
 
 ReactDOM.render(

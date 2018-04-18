@@ -1,17 +1,22 @@
 import { connect } from 'react-redux';
 import Contacts from '../../components/contacts/contacts.js';
-import { seeAccountDetails } from '../../actions/index.js';
+import { fetchContacts } from '../../actions/contactActions.js';
 import { withRouter } from 'react-router-dom';
+
+
 
 const mapStateToProps = (state) => {
   return {
-    contactList: state.ContactReducer
+    contactList: state.ContactReducer.contacts,
+    loading: state.ContactReducer.loading
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onAccountClick: dispatch(seeAccountDetails('12'))
+    onContactsRequest: () => {
+      dispatch(fetchContacts());
+    }
   }
 }
 

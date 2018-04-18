@@ -3,6 +3,8 @@ import TimelineReducer from './timeline';
 import { combineReducers } from 'redux';
 import PipelineReducer from './pipeline';
 import ContactReducer from './contacts';
+import OpportunitiesReducer from './opportunities';
+import accountReducer from './accounts';
 import DetailsInformationReducer from './detailsInformationReducer';
 
 const rootReducer = combineReducers({
@@ -10,7 +12,9 @@ const rootReducer = combineReducers({
 	TimelineReducer,
 	PipelineReducer,
 	ContactReducer,
-	DetailsInformationReducer
+	DetailsInformationReducer,
+	accountReducer,
+	OpportunitiesReducer
 });
 
 export default rootReducer;

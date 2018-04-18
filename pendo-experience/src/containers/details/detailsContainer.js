@@ -4,10 +4,10 @@ import {
 	updateDetailsInputValue,
 	addPostToTimeline,
 	requestDetailsData,
-	fetchDetails,
-	changePageTitle
-} from '../../actions';
-
+	fetchDetails
+} from '../../actions/detailActions.js';
+import { changePageTitle } from '../../actions';
+import { withRouter } from 'react-router-dom';
 
 
 
@@ -43,6 +43,6 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 
-const FinalDetails = connect(mapStateToProps,mapDispatchToProps)(Details);
+const FinalDetails = withRouter(connect(mapStateToProps,mapDispatchToProps)(Details));
 
 export default FinalDetails;

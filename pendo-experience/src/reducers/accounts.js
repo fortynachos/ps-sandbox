@@ -1,9 +1,9 @@
 let initialAccount = [
   {
     key: '1',
-    name: 'John Brown',
+    name: 'P Sherman',
     rep: 32,
-    territory: 'New York No. 1 Lake Park',
+    territory: '42 Wallaby Way, Sydney',
   }
 ]
 
@@ -15,13 +15,13 @@ const accountReducer = (
  action
  ) => {
 	switch (action.type) {
-    case 'REQUEST_ACCOUNTS':
+    case 'REQUEST_ACCOUNTS_DATA':
       return Object.assign({}, state, {
         loading: action.loading
       })
-    case 'RECEIVED_ACCOUNTS':
+    case 'RECEIVED_ACCOUNTS_DATA':
       return Object.assign({}, state, {
-        accounts: action.accounts,
+        accounts: action.json,
         loading: action.loading
       })
 		default:

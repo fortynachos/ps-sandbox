@@ -40,6 +40,7 @@ const tabsArray = [
 export default class Details extends React.Component {
 	componentWillMount() {
 		let url = document.location.pathname;
+		console.log(url);
 		this.props.onDetailsLoad(url);
 		this.props.onTitleChange('Details');
 	}
@@ -50,22 +51,17 @@ export default class Details extends React.Component {
 			<div className="details-container">
 			 		<Card loading={this.props.loading} title="Quick Information" id="quick-info">
 						<p>
-							<img src={this.props.quickInfo[0].picture.large} alt="pic"></img>
+
 						</p>
 			 			<p>
 							{
-								this.props.quickInfo[0].name.first.charAt(0).toUpperCase() + this.props.quickInfo[0].name.first.slice(1) +
-								' ' +
-								this.props.quickInfo[0].name.last.charAt(0).toUpperCase() + this.props.quickInfo[0].name.last.slice(1)
+								this.props.quickInfo.name
 							}
 						</p>
 			 		</Card>
 			 		<Card loading={this.props.loading} title="Additional Information" id="additional-info">
 			 			<p>
-			 				{this.props.quickInfo[0].location.street}
-			 			</p>
-			 			<p>
-			 				{this.props.quickInfo[0].cell}
+			 				{this.props.quickInfo.key}
 			 			</p>
 			 		</Card>
 			 		<Tabs
@@ -107,65 +103,3 @@ export default class Details extends React.Component {
 		)
 	}
 }
-
-// const Details = ({inputValue, onDetailsSubmit, onDetailsChange,timelinePosts}) => (
-// 	<div className="details-container">
-// 		<Card title="Quick Information" id="quick-info">
-// 			<p>
-// 				Picture
-// 			</p>
-// 			<p>
-// 				Name
-// 			</p>
-// 		</Card>
-// 		<Card title="Additional Information" id="additional-info">
-// 			<p>
-// 				Address:
-// 			</p>
-// 			<p>
-// 				Phone:
-// 			</p>
-// 			<p>
-// 				Role:
-// 			</p>
-// 		</Card>
-// 		<Tabs
-// 			defaultActiveKey="1"
-// 			d="entry-tabs"
-// 			type="card"
-// 			tabBarExtraContent={
-// 				<Button onClick={() => {
-// 					let activeTabHTML = document.getElementsByClassName('ant-tabs-tab-active')[0].innerHTML;
-// 					onDetailsSubmit(activeTabHTML, inputValue);
-// 				}}>
-// 					Submit
-// 				</Button>
-// 			}
-// 		>
-// 			{
-// 				tabsArray.map(tab => {
-// 					return (
-// 						<TabPane tab={tab.tab} key={tab.key}>
-// 							<TextArea
-// 								rows={4}
-// 								className="timeline-entry"
-// 								value={inputValue}
-// 								onChange={e => onDetailsChange(e.target.value)}
-// 							/>
-// 						</TabPane>
-// 						);
-// 				})
-// 			}
-// 		</Tabs>
-// 		<Timeline>
-// 			{timelinePosts.map(item => {
-// 					return <Timeline.Item key={item.key} dot={<Icon type={item.type} />}>{item.entry}</Timeline.Item>
-// 					}
-// 				)
-// 			}
-// 		 </Timeline>
-// 	</div>
-// 	);
-//
-//
-// export default Details;

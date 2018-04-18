@@ -1,12 +1,26 @@
 import { connect } from 'react-redux';
 import Accounts from '../../components/accounts/accounts.js';
+import { withRouter } from 'react-router-dom';
+import { fetchAccounts  } from '../../actions/accountActions';
+
+
 
 const mapStateToProps = state => {
   return {
-    accounts: state.accountReducer.accounts
+    accounts: state.accountReducer.accounts,
+    loading: state.accountReducer.loading
   }
 }
 
-const accountList = connect(mapStateToProps)(Accounts)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onAccountsLoad: () => {
+      dispatch(fetchAccounts());
+    }
+  }
+}
+
+
+const accountList = withRouter(connect(mapStateToProps,mapDispatchToProps)(Accounts));
 
 export default accountList

@@ -13,15 +13,23 @@ const columns = [{
   title: 'Name',
   dataIndex: 'name',
   key: 'name',
-  render: (text,record) => <Link to="/1/1/details"><span>{text}</span></Link>,
+  render: (text,record) => <Link to={"/contacts/" + record._id +"/details"}><span>{text}</span></Link>,
 }, {
-  title: 'Age',
-  dataIndex: 'age',
-  key: 'age',
+  title: 'Account',
+  dataIndex: 'account',
+  key: 'account',
 }, {
-  title: 'Address',
-  dataIndex: 'address',
-  key: 'address',
+  title: 'Email',
+  dataIndex: 'email',
+  key: 'email',
+}, {
+  title: 'Phone',
+  dataIndex: 'phone',
+  key: 'phone',
+}, {
+  title: 'Title',
+  dataIndex: 'title',
+  key: 'title',
 }, {
   title: 'Action',
   key: 'action',
@@ -38,9 +46,13 @@ const columns = [{
   ),
 }];
 
-
-const Contacts = ({contactList}) => (
-	<Table columns={columns} dataSource={contactList}  style={{margin: "0px 15px"}}/>
-);
-
-export default Contacts;
+export default class Contacts extends React.Component {
+  componentWillMount() {
+    this.props.onContactsRequest();
+  }
+  render() {
+    return (
+      <Table columns={columns} dataSource={this.props.contactList} loading={this.props.loading} style={{margin: "0px 15px"}} scroll={{y: 500}}/>
+    );
+  }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table, Icon, Divider } from 'antd';
+import { Link } from 'react-router-dom';
 import 'antd/dist/antd.css';
 
 
@@ -8,15 +9,19 @@ const columns = [{
   title: 'Name',
   dataIndex: 'name',
   key: 'name',
-  render: text => <a>{text}</a>,
+  render: (text,record) => <Link to={"/opportunities/" + record._id +"/details"}><span>{text}</span></Link>
 }, {
-  title: 'Age',
-  dataIndex: 'age',
-  key: 'age',
+  title: 'Account',
+  dataIndex: 'account',
+  key: 'account',
 }, {
-  title: 'Address',
-  dataIndex: 'address',
-  key: 'address',
+  title: 'Contact',
+  dataIndex: 'contact',
+  key: 'contact',
+}, {
+  title: 'Rep',
+  dataIndex: 'rep',
+  key: 'rep',
 }, {
   title: 'Action',
   key: 'action',
@@ -33,26 +38,16 @@ const columns = [{
   ),
 }];
 
-const data = [{
-  key: '1',
-  name: 'John Brown',
-  age: 32,
-  address: 'New York No. 1 Lake Park',
-}, {
-  key: '2',
-  name: 'Jim Green',
-  age: 42,
-  address: 'London No. 1 Lake Park',
-}, {
-  key: '3',
-  name: 'Joe Black',
-  age: 32,
-  address: 'Sidney No. 1 Lake Park',
-}];
-
-const Opportunities = () => (
-	<Table columns={columns} dataSource={data} style={{margin: "0px 15px"}}/>
-);
 
 
-export default Opportunities;
+
+export default class Opportunities extends React.Component {
+  componentWillMount() {
+    this.props.onOpportunitiesLoad();
+  }
+  render() {
+    return (
+      <Table columns={columns} dataSource={this.props.opportunitiesList} loading={this.props.loading} style={{margin: "0px 15px"}} scroll={{y:500}}/>
+    )
+  }
+}
