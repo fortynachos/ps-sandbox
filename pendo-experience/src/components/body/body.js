@@ -47,7 +47,7 @@ export default class Body extends React.Component {
 			<div className="body-container">
 				<div className="app-container">
 					<div className="vertical-menu">
-						<Search placeholder="Search" enterButton onSearch={value => console.log(value)} />
+						<Search placeholder="Search" enterButton onSearch={value => console.log(value)}  />
 						<div className="settings-options">
 							<Icon type="message" />
 							<Icon type="notification" />

@@ -20,7 +20,7 @@ const data = [{name: 'Week 1', goal: 50000, actual: 45000},
 ];
 
 /*
-      if you change the value above to an array it will create a centered graph. Use the largest value as 100%. 
+      if you change the value above to an array it will create a centered graph. Use the largest value as 100%.
       Then just compute a centroid and a range from there on
 
 */
@@ -31,8 +31,8 @@ const Forecast = () => (
 	<Card title="Forecast" extra={<a>More</a>} id="metrics">
 
                   <ComposedChart
-                  width={600} 
-                  height={220}  
+                  width={600}
+                  height={220}
                   data={data}
                   margin={{
                         top: 0, right: 0, bottom: 0, left: 0
@@ -53,7 +53,7 @@ const Forecast = () => (
                 <Area type='monotone' dataKey='projection' fill='url(#coloractual)' fillOpacity={1} stroke='#5fa0dd' strokeDasharray="3 3" strokeWidth={3}/>
        </ComposedChart>
 	</Card>
-);	
+);
 
 
 export default Forecast;
