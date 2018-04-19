@@ -2,7 +2,7 @@ import React from 'react';
 import './dashboard.css';
 
 import { Card } from 'antd';
-import { ComposedChart, XAxis, YAxis, CartesianGrid, Tooltip, Area, Line} from 'recharts';
+import { ComposedChart, XAxis, YAxis, CartesianGrid, Tooltip, Area, Line, ResponsiveContainer } from 'recharts';
 
 
 const data = [{name: 'Week 1', goal: 50000, actual: 45000},
@@ -26,32 +26,27 @@ const data = [{name: 'Week 1', goal: 50000, actual: 45000},
 */
 
 
+// var metrics_chart_width = document.querySelector("#metrics .ant-card-body").offsetWidth;
+// console.log(metrics_chart_width);
 
 const Forecast = () => (
 	<Card title="Forecast" extra={<a>More</a>} id="metrics">
-
-                  <ComposedChart
-                  width={600}
-                  height={220}
-                  data={data}
-                  margin={{
-                        top: 0, right: 0, bottom: 0, left: 0
-                  }}
-                  >
-                  <defs>
-                        <linearGradient id="coloractual" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="35%" stopColor="#7cb5ec" stopOpacity={0.8}/>
-                                    <stop offset="95%" stopColor="#7cb5ec" stopOpacity={0}/>
-                            </linearGradient>
-                      </defs>
-                <CartesianGrid stroke='#f5f5f5'/>
-                <XAxis dataKey="name"/>
-                <YAxis />
-                <Tooltip />
-                <Area type='monotone' dataKey='actual' fill='url(#coloractual)' fillOpacity={1} stroke='#5fa0dd'/>
-                <Line type='monotone' strokeDasharray="3 3" dot={false} dataKey='goal' stroke='#000' strokeWidth={2} />
-                <Area type='monotone' dataKey='projection' fill='url(#coloractual)' fillOpacity={1} stroke='#5fa0dd' strokeDasharray="3 3" strokeWidth={3}/>
-       </ComposedChart>
+  <ResponsiveContainer width="100%" height="85%">
+      <ComposedChart
+        data={data}
+        margin={{
+        top: 15, right: 15, bottom: 15, left: 15
+        }}
+      >
+        <CartesianGrid stroke='#f5f5f5'/>
+        <XAxis dataKey="name"/>
+        <YAxis />
+        <Tooltip />
+        <Area type='monotone' dot={true} dataKey='actual' fill='#40a9ff' fillOpacity={1} strokeWidth={3} stroke='#1890ff'/>
+        <Line type='monotone' strokeDasharray="3 3" dot={false} dataKey='goal' stroke='#000' strokeWidth={2} />
+        <Area type='monotone' dataKey='projection' fill='#40a9ff' fillOpacity={1} stroke='#1890ff' strokeDasharray="5 5" strokeWidth={3}/>
+      </ComposedChart>
+    </ResponsiveContainer>
 	</Card>
 );
 

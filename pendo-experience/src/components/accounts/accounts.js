@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Icon, Divider } from 'antd';
+import { Table } from 'antd';
 import { Link } from 'react-router-dom';
 import 'antd/dist/antd.css';
 
@@ -7,38 +7,30 @@ const columns = [{
   title: 'Name',
   dataIndex: 'name',
   key: 'name',
+  width: 150,
   render: (text,record) => <Link to={"/accounts/" + record._id +"/details"}><span>{text}</span></Link>
 }, {
   title: 'Rep',
   dataIndex: 'rep',
   key: 'rep',
+  width: 150,
 }, {
   title: 'Territory',
   dataIndex: 'territory',
   key: 'territory',
+  width: 150,
 }, {
   title: 'Industry',
   dataIndex: 'industry',
   key: 'industry',
+  width: 150,
+  render: (text) => <span>{text}</span>
 },
 {
  title: 'Address',
  dataIndex: 'address',
  key: 'address',
-}, {
-  title: 'Action',
-  key: 'action',
-  render: (text, record) => (
-    <span>
-      <a>Action 一 {record.name}</a>
-      <Divider type="vertical" />
-      <a>Delete</a>
-      <Divider type="vertical" />
-      <a className="ant-dropdown-link">
-        More actions <Icon type="down" />
-      </a>
-    </span>
-  ),
+ width: 300,
 }];
 
 export default class Accounts extends React.Component {

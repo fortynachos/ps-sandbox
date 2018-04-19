@@ -26,11 +26,45 @@ box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 	overflow:hidden;
 }
 
+.ant-avatar {
+	background-color: #FFF;
+}
 
-.settings-options i {
-	color: #1890ff;
+.settings-options .ant-badge {
 	margin: 10px;
 	font-size: 32px;
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+	border-color: #D9D9D8;
+	border-radius: 3px;
+	border: 1px solid transparent;
+	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	-webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	-o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.settings-options .anticon {
+	color: rgba(0,0,0,.65);
+	transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	-webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+	-o-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.settings-options .ant-badge:hover .anticon {
+	color: #40a9ff;
+}
+
+.settings-options {
+	margin-right: 5px;
+}
+.ant-avatar:hover {
+		color: #40a9ff;
+}
+
+.ant-badge:hover {
+	cursor: pointer;
+	border-color: #40a9ff;
 }
 
 .vertical-menu {
