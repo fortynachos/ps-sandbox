@@ -1,6 +1,6 @@
 import React from 'react';
 import Forecast from '../dashboard/forecast.js';
-import ListView from '../dashboard/dashboard-list-view.js';
+import FinalListView from '../../containers/dashboard/dashOppsContainer.js';
 import FinalPipeline from '../../containers/pipeline/pipelineContainer.js';
 import QuotaAttainment from '../dashboard/quota-attainment.js';
 import './dashboard.css';
@@ -10,7 +10,7 @@ import './dashboard.css';
 const Dashboard = () => (
 	<div className="dashboard-container">
 		<Forecast />
-		<ListView />
+		<FinalListView />
 		<FinalPipeline />
 		<QuotaAttainment />
 	</div>

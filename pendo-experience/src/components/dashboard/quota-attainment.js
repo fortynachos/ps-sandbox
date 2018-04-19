@@ -1,7 +1,7 @@
 import React from 'react';
 import './dashboard.css';
 import { Card } from 'antd';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 
 const data = [
@@ -18,22 +18,24 @@ const data = [
 const QuoteAttainment = () => (
 
 		<Card title="Quota Attainment" extra={<a>More</a>} id='quota'>
-			<BarChart 
-				width={270} 
-				height={225} 
+    <ResponsiveContainer width="100%" height="85%">
+			<BarChart
+				width={270}
+				height={225}
 				data={data}
             	margin={{
-            		top: 0, right: 0, left: 0, bottom: 0
+            		top: 15, right: 15, left: 0, bottom: 15
             	}}
             	>
-		       <CartesianGrid strokeDasharray="3 3"/>
+		       <CartesianGrid stroke="#f5f5f5"/>
 		       <XAxis dataKey="name"/>
 		       <YAxis/>
 		       <Tooltip/>
 		       <Bar dataKey="pv" stackId="a" fill="#1890ff" />
 		       <Bar dataKey="uv" stackId="a" fill="#011529" />
       </BarChart>
+    </ResponsiveContainer>
 		</Card>
-	);	
+	);
 
 export default QuoteAttainment;

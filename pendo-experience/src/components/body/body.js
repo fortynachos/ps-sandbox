@@ -1,6 +1,6 @@
 import React from 'react';
 import Main from '../../main.js';
-import { Input, Button, Icon, Modal,Form, Select } from 'antd';
+import { Input, Button, Modal,Form, Select, Avatar, Badge } from 'antd';
 import './body.css';
 const Search = Input.Search;
 const Option = Select.Option;
@@ -47,11 +47,11 @@ export default class Body extends React.Component {
 			<div className="body-container">
 				<div className="app-container">
 					<div className="vertical-menu">
-						<Search placeholder="Search" enterButton onSearch={value => console.log(value)} />
+						<Search placeholder="Search" enterButton onSearch={value => console.log(value)}  />
 						<div className="settings-options">
-							<Icon type="message" />
-							<Icon type="notification" />
-							<Icon type="user" />
+							<Badge count={1}><Avatar size="large" shape="square" icon="message" /></Badge>
+							<Badge count={1}><Avatar size="large" shape="square" icon="notification" /></Badge>
+							<Badge count={0}><Avatar size="large" shape="square" icon="user" /></Badge>
 						</div>
 
 					</div>

@@ -9,6 +9,10 @@
 	margin-top: -10px !important;
 }
 
+.ant-card-body {
+	height: 100%;
+}
+
 main {
 	height: 95%;
 }
@@ -23,9 +27,36 @@ main {
 #metrics {
 	grid-column-start: 1;
 	grid-column-end: 3;
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 }
 
+#list-view {
+	grid-column-start: 3;
+	grid-column-end: 4;
+	grid-row-start: 1;
+	grid-row-end: 3;
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+}
 
+#forecast {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 2;
+	grid-row-end: 3;
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+}
+
+#quota {
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+}
 
 #list-view .ant-card-body {
 	padding: 16px;
@@ -45,19 +76,7 @@ main {
 }
 
 
-#list-view {
-	grid-column-start: 3;
-	grid-column-end: 4;
-	grid-row-start: 1;
-	grid-row-end: 3;
-}
 
-#forecast {
-	grid-column-start: 2;
-	grid-column-end: 3;
-	grid-row-start: 2;
-	grid-row-end: 3;
-}
 
 .list-container {
 	width: 100%;

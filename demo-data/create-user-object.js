@@ -76,16 +76,12 @@ for (var i = 0; i <= 1000; i++) {
 	var emailAndOrg = EmailGenerator();
 
 	var obj = {
-		visitor: {
-			id: GuidGenerator(),
+			contact_id: GuidGenerator(),
 			role: RoleGenerator(),
-			email: emailAndOrg[0]
-		}, 
-		account: {
-			id: emailAndOrg[1],
+			email: emailAndOrg[0],
+			account_id: emailAndOrg[1],
 			planLevel: planLevelGenerator(),
 			vertical: verticalGenerator()
-		}
 	};
 
 	userObject.push(obj);
@@ -98,7 +94,7 @@ var jsonObject = {
 
 var json = JSON.stringify(jsonObject);
 
-fs.writeFile('users.json', json, 'utf8');
+fs.writeFile('users_2.json', json, 'utf8');
 
 
 

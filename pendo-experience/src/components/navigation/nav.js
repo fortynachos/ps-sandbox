@@ -2,20 +2,21 @@ import React from 'react';
 import './nav.css';
 import { Link } from 'react-router-dom';
 import { Menu, Icon } from 'antd';
-
+const SubMenu = Menu.SubMenu;
+const MenuItemGroup = Menu.ItemGroup;
 
 
 const Navigation = ({onNavClick}) => (
 	<div className="nav-bar">
+		<div className="logo">
+			<h1>
+				Pendo Experience
+			</h1>
+		</div>
 		<Menu
 			theme='dark'
-			style={{width: 256}}
+			style={{width: 240}}
 		>
-			<div className="logo">
-				<h1>
-					CRM
-				</h1>
-			</div>
 			<Menu.Item key="1">
 				<Link to='/' onClick={() => onNavClick('Dashboard')}>
 					<Icon type="home" />
@@ -41,11 +42,40 @@ const Navigation = ({onNavClick}) => (
 				</Link>
 			</Menu.Item>
 			<Menu.Item key="5">
-				<Link to='/1/1/details' onClick={() => onNavClick('Details')}>
-					<Icon type="folder-open" />
-					<span>Temporary Details</span>
-				</Link>
 			</Menu.Item>
+		</Menu>
+		<Menu
+			theme="dark"
+			style={{
+				"bottom": "10px",
+				"position": "absolute",
+				width: 220
+			}}
+			>
+			<SubMenu key="sub1" title={<span><Icon type="setting" /><span>Settings</span></span>}>
+				<MenuItemGroup>
+					<Menu.Item key="5">
+						<Icon type="setting" />
+						<span>Settings</span>
+					</Menu.Item>
+					<Menu.Item key="6">
+						<Icon type="setting" />
+						<span>Settings</span>
+					</Menu.Item>
+					<Menu.Item key="7">
+						<Icon type="setting" />
+						<span>Settings</span>
+					</Menu.Item>
+					<Menu.Item key="8">
+						<Icon type="setting" />
+						<span>Settings</span>
+					</Menu.Item>
+					<Menu.Item key="9">
+						<Icon type="setting" />
+						<span>Settings</span>
+					</Menu.Item>
+				</MenuItemGroup>
+			</SubMenu>
 		</Menu>
 	</div>
 );
