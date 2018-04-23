@@ -17,7 +17,7 @@ const data = [
 
 const QuoteAttainment = () => (
 
-		<Card title="Quota Attainment" extra={<a>More</a>} id='quota'>
+		<Card title="Quota Attainment" id='quota'>
     <ResponsiveContainer width="100%" height="85%">
 			<BarChart
 				width={270}

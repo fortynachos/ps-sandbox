@@ -55,24 +55,16 @@ const Navigation = ({onNavClick}) => (
 			<SubMenu key="sub1" title={<span><Icon type="setting" /><span>Settings</span></span>}>
 				<MenuItemGroup>
 					<Menu.Item key="5">
-						<Icon type="setting" />
-						<span>Settings</span>
+						<Icon type="user" />
+						<span>Profile</span>
 					</Menu.Item>
 					<Menu.Item key="6">
-						<Icon type="setting" />
-						<span>Settings</span>
-					</Menu.Item>
-					<Menu.Item key="7">
-						<Icon type="setting" />
-						<span>Settings</span>
-					</Menu.Item>
-					<Menu.Item key="8">
-						<Icon type="setting" />
-						<span>Settings</span>
+						<Icon type="team" />
+						<span>Manage Users</span>
 					</Menu.Item>
 					<Menu.Item key="9">
-						<Icon type="setting" />
-						<span>Settings</span>
+						<Icon type="customer-service" />
+						<span>Contact Support</span>
 					</Menu.Item>
 				</MenuItemGroup>
 			</SubMenu>

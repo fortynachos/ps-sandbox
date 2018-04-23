@@ -30,7 +30,7 @@ const data = [{name: 'Week 1', goal: 50000, actual: 45000},
 // console.log(metrics_chart_width);
 
 const Forecast = () => (
-	<Card title="Forecast" extra={<a>More</a>} id="metrics">
+	<Card title="Forecast" id="metrics">
   <ResponsiveContainer width="100%" height="85%">
       <ComposedChart
         data={data}

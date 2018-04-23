@@ -10,7 +10,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 
 const Pipeline = ({pipelineData}) => (
 
-		<Card title="Pipeline" extra={<a>More</a>} id="forecast">
+		<Card title="Pipeline" id="forecast">
 		<ResponsiveContainer width="96%" height="80%">
 		<BarChart
 			data={pipelineData}

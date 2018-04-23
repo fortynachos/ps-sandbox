@@ -24,7 +24,7 @@ export default class ListView extends React.Component {
 
   render() {
     return (
-      <Card title="Open Opportunities" extra={<a>More</a>} id="list-view">
+      <Card title="Open Opportunities" id="list-view">
         <Table columns={columns} dataSource={this.props.opportunitiesList} loading={this.props.loading} size="middle" scroll={{y: 450}}/>
       </Card>
     )

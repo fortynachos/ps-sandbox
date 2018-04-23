@@ -9,6 +9,11 @@
 	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+height: 32px;
+}
+
+.vertical-menu .ant-btn {
+	height: 32px;
 }
 .app-container {
 	width: 83%;
@@ -96,7 +101,10 @@ box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 }
 
 #add-new {
-	margin-top: 12px;
+	margin: 15px;
+	font-size: 14px;
+	padding: 0px 50px;
+	float:right;
 	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);

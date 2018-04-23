@@ -1,6 +1,6 @@
 import React from 'react';
 import Main from '../../main.js';
-import { Input, Button, Modal,Form, Select, Avatar, Badge } from 'antd';
+import { Input, Button, Modal,Form, Select } from 'antd';
 import './body.css';
 const Search = Input.Search;
 const Option = Select.Option;
@@ -47,18 +47,7 @@ export default class Body extends React.Component {
 			<div className="body-container">
 				<div className="app-container">
 					<div className="vertical-menu">
-						<Search placeholder="Search" enterButton onSearch={value => console.log(value)}  />
-						<div className="settings-options">
-							<Badge count={1}><Avatar size="large" shape="square" icon="message" /></Badge>
-							<Badge count={1}><Avatar size="large" shape="square" icon="notification" /></Badge>
-							<Badge count={0}><Avatar size="large" shape="square" icon="user" /></Badge>
-						</div>
-
-					</div>
-					<div className="name-and-new">
-						<h1>
-							{this.props.title}
-						</h1>
+						<Search placeholder="Search" enterButton onSearch={value => console.log(value)}/>
 						<Button type='primary' size="large" id="add-new" onClick={(e) => this._onAddNew(e)}>
 							Add New
 						</Button>
@@ -100,6 +89,11 @@ export default class Body extends React.Component {
 								</FormItem>
 							</Form>
 						</Modal>
+					</div>
+					<div className="name-and-new">
+						<h1>
+							{this.props.title}
+						</h1>
 					</div>
 					<div className="main-content">
 						<Main />
