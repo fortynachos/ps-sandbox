@@ -9,7 +9,8 @@ const DetailsInformationReducer = (state = {
     cell: ''
   }],
   additionalInfo: {},
-  loading: true
+  loading: true,
+  pic: {}
 },action) => {
   switch(action.type) {
     case 'REQUEST_DETAILS_DATA':
@@ -20,7 +21,7 @@ const DetailsInformationReducer = (state = {
       return Object.assign({}, state, {
         quickInfo: action.json,
         additionalInfo: action.json,
-        loading: action.loading
+        loading: action.loading,
       })
     default:
       return state

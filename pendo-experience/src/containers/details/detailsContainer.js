@@ -17,7 +17,7 @@ const mapStateToProps = (state) => {
 		timelinePosts: state.TimelineReducer.timelinePosts,
 		quickInfo: state.DetailsInformationReducer.quickInfo,
 		additionalInfo: state.DetailsInformationReducer.additionalInfo,
-		loading: state.DetailsInformationReducer.loading
+		loading: state.DetailsInformationReducer.loading,
 	}
 };
 

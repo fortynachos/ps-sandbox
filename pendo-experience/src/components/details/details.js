@@ -53,11 +53,7 @@ export default class Details extends React.Component {
 						<p>
 
 						</p>
-			 			<p>
-							{
-								this.props.quickInfo.name
-							}
-						</p>
+			 			<img src={this.props.additionalInfo.photo} alt="pic"></img>
 			 		</Card>
 			 		<Card loading={this.props.loading} title="Additional Information" id="additional-info">
 			 			<p>
