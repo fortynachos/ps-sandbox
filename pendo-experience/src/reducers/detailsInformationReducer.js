@@ -1,5 +1,5 @@
 const DetailsInformationReducer = (state = {
-  quickInfo: [{
+  info: [{
     name: {
       first: '',
       last: ''
@@ -8,7 +8,6 @@ const DetailsInformationReducer = (state = {
     location: '',
     cell: ''
   }],
-  additionalInfo: {},
   loading: true,
   pic: {}
 },action) => {
@@ -19,8 +18,7 @@ const DetailsInformationReducer = (state = {
       })
     case 'RECEIVED_DETAILS_DATA':
       return Object.assign({}, state, {
-        quickInfo: action.json,
-        additionalInfo: action.json,
+        info: action.json,
         loading: action.loading,
       })
     default:
