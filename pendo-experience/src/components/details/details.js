@@ -50,15 +50,23 @@ export default class Details extends React.Component {
 		return (
 			<div className="details-container">
 			 		<Card loading={this.props.loading} title="Quick Information" id="quick-info">
+			 			<img src={this.props.info.photo} alt="pic" id="details-pic"></img>
 						<p>
-
+							<strong>Name: </strong>{this.props.info.name}
 						</p>
-			 			<img src={this.props.additionalInfo.photo} alt="pic"></img>
 			 		</Card>
 			 		<Card loading={this.props.loading} title="Additional Information" id="additional-info">
-			 			<p>
-			 				{this.props.quickInfo.key}
+
+						<p>
+			 				<strong>Account: </strong> {this.props.info.account}
 			 			</p>
+			 			<p>
+			 				<strong>Email: </strong>{this.props.info.email}
+			 			</p>
+						<p>
+			 				<strong>Phone: </strong>{this.props.info.phone}
+			 			</p>
+
 			 		</Card>
 			 		<Tabs
 						defaultActiveKey="1"

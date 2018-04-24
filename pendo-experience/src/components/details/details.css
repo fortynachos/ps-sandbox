@@ -8,11 +8,26 @@
 #quick-info {
 	grid-row-start: 1;
 	grid-row-end: 3;
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+text-align: center;
 }
 
+#details-pic {
+	margin-bottom: 10px;
+}
 
 #additional-info {
 	grid-row-start: 3;
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+text-align: center;
+}
+
+.additional-info-list {
+	margin-left: -35px;
 }
 
 .ant-tabs {
@@ -28,8 +43,4 @@
 
 .ant-card {
 	margin-top: 0px !important;
-}
-
-#quick-info {
-	text-align: center;
 }
