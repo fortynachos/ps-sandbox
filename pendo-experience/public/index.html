@@ -10,20 +10,40 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyD_kfqM2fmM6G8YViiJISqlPX-cI-nyvOI",
-        authDomain: "pendo-experience-39733.firebaseapp.com",
-        databaseURL: "https://pendo-experience-39733.firebaseio.com",
-        projectId: "pendo-experience-39733",
-        storageBucket: "pendo-experience-39733.appspot.com",
-        messagingSenderId: "467701926155"
-      };
-      firebase.initializeApp(config);
-    </script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script>
+  (function(apiKey){
+    (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=[];
+      v=['initialize','identify','updateOptions','pageLoad'];for(w=0,x=v.length;w<x;++w)(function(m){
+      o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
+      y=e.createElement(n);y.async=!0;y.src='https://cdn.pendo.io/agent/static/'+apiKey+'/pendo.js';
+      z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
+
+    // Call this whenever information about your visitors becomes available
+    // Please use Strings, Numbers, or Bools for value types.
+    pendo.initialize({
+      visitor: {
+        id:              'VISITOR-UNIQUE-ID'   // Required if user is logged in
+        // email:        // Optional
+        // role:         // Optional
+
+        // You can add any additional visitor level key-values here,
+        // as long as it's not one of the above reserved names.
+      },
+
+      account: {
+        // id:           'ACCOUNT-UNIQUE-ID' // Highly recommended
+        // name:         // Optional
+        // planLevel:    // Optional
+        // planPrice:    // Optional
+        // creationDate: // Optional
+
+        // You can add any additional account level key-values here,
+        // as long as it's not one of the above reserved names.
+      }
+    });
+  })('74924fb4-e18c-42b1-664b-47ed918c3a45');
+</script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
