@@ -9,13 +9,15 @@ const MenuItemGroup = Menu.ItemGroup;
 const Navigation = ({onNavClick}) => (
 	<div className="nav-bar">
 		<div className="logo">
-			<h1>
-				Pendo Experience
-			</h1>
+			<h3>
+				Acme CRM
+			</h3>
+			<img src={require("./clouds.png")} alt="logo" id="cloud-logo"/>
 		</div>
 		<Menu
 			theme='dark'
 			style={{width: 240}}
+			id="main-menu"
 		>
 			<Menu.Item key="1">
 				<Link to='/' onClick={() => onNavClick('Dashboard')}>

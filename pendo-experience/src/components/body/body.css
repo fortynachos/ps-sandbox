@@ -94,6 +94,7 @@ height: 32px;
 	display: flex;
 	margin: 0px 15px;
 	justify-content: space-between;
+	margin-top:20px;
 }
 
 .name-and-new h1{

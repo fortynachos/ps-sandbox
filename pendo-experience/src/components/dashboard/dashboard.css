@@ -137,3 +137,10 @@ box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 .blue {
 	background-color: #E4F8FE;
 }
+
+.recharts-text {
+	fill: rgb(102, 102, 102);
+	font-weight:300;
+	font-size: 12px;
+}
+
