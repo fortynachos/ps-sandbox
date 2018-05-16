@@ -19,15 +19,7 @@ const data = [{name: 'Week 1', goal: 50000, actual: 45000},
               {name: 'Week 12', goal: 2340000, projection: 2460000}
 ];
 
-/*
-      if you change the value above to an array it will create a centered graph. Use the largest value as 100%.
-      Then just compute a centroid and a range from there on
 
-*/
-
-
-// var metrics_chart_width = document.querySelector("#metrics .ant-card-body").offsetWidth;
-// console.log(metrics_chart_width);
 
 const Forecast = () => (
 	<Card title="Forecast" id="metrics">
@@ -39,9 +31,9 @@ const Forecast = () => (
         top: 15, right: 15, bottom: 15, left: 15
         }}
       >
-        <CartesianGrid stroke='#f5f5f5'vertical={false}/>
+        <CartesianGrid stroke='#ddd' vertical={false}/>
         <XAxis dataKey="name" tickSize={4}/>
-        <YAxis tickSize={4} unit="($)"/>
+        <YAxis tickSize={4}/>
         <Tooltip />
         <Area type='monotone' dot={true} dataKey='actual' fill='#40a9ff' fillOpacity={1} strokeWidth={3} stroke='#1890ff'/>
         <Area type='monotone' dataKey='projection' fill='#40a9ff' fillOpacity={1} stroke='#1890ff' strokeDasharray="5 5" strokeWidth={3}/>
