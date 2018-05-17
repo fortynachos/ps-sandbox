@@ -12,7 +12,11 @@ export default class Body extends React.Component {
 
 		this.state = {
 			visible: false,
-			OKLoading: false
+			OKLoading: false,
+			value: '',
+			name: '',
+			email: '',
+			phone: ''
 		}
 	}
 
@@ -38,10 +42,38 @@ export default class Body extends React.Component {
 			this.setState({
 				OKLoading: false,
 				visible: false
-			})
+			});
+			localStorage.setItem('ObjectType', this.state.value);
+			localStorage.setItem('Name', this.state.name);
+			localStorage.setItem('Email', this.state.email);
+			localStorage.setItem('Phone', this.state.phone);
+			localStorage.setItem('loading', false)
+			window.location.href = this.state.value + "/new/details"
 		},1000);
 	}
 
+
+	_onHandleSelectChange(value) {
+		this.setState({
+			value
+		});
+	}
+
+	_onHandleNameChange(e) {
+		this.setState({
+			name: e.target.value
+		})
+	}
+	_onHandleEmailChange(e) {
+		this.setState({
+			email: e.target.value
+		})
+	}
+	_onHandlePhoneChange(e) {
+		this.setState({
+			phone: e.target.value
+		})
+	}
 	render() {
 		return (
 			<div className="body-container">
@@ -63,7 +95,7 @@ export default class Body extends React.Component {
 									<h3>
 										Type:
 									</h3>
-									<Select defaultValue="">
+									<Select defaultValue="" value={this.state.value} onChange={(value) => this._onHandleSelectChange(value)}>
 										<Option value="Accounts">Account</Option>
 										<Option value="Contacts">Contact</Option>
 										<Option value="Opportunities">Opportunity</Option>
@@ -73,19 +105,19 @@ export default class Body extends React.Component {
 									<h3>
 										Name:
 									</h3>
-									<Input></Input>
+									<Input value={this.state.name} onChange={(e) => this._onHandleNameChange(e)}></Input>
 								</FormItem>
 								<FormItem>
 									<h3>
-										Address:
+										Email:
 									</h3>
-									<Input></Input>
+									<Input value={this.state.email} onChange={(e) => this._onHandleEmailChange(e)}></Input>
 								</FormItem>
 								<FormItem>
 									<h3>
 										Phone #:
 									</h3>
-									<Input></Input>
+									<Input value={this.state.phone} onChange={(e) => this._onHandlePhoneChange(e)}></Input>
 								</FormItem>
 							</Form>
 						</Modal>

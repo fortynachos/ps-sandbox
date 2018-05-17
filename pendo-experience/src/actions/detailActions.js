@@ -28,10 +28,19 @@ export const requestDetailsData = (url) => ({
 	url
 })
 
-export const receivedDetailsData = (json) => ({
+export const receivedAsyncDetailsData = (json) => ({
 	type: 'RECEIVED_DETAILS_DATA',
 	loading: false,
 	json
+})
+
+export const newDetailsData = (objectType, name, address, phone) => ({
+	type: 'NEW_DETAILS_DATA',
+	loading: false,
+	objectType,
+	name,
+	address,
+	phone
 })
 
 export const fetchDetails = (url) => {
@@ -43,7 +52,7 @@ export const fetchDetails = (url) => {
 
 		RestDBAxios.get(urlSplit[1] + "/" + urlSplit[2])
 			.then(response => {
-				dispatch(receivedDetailsData(response.data));
+				dispatch(receivedAsyncDetailsData(response.data));
 			})
 			.catch(err => console.log(err));
 	}

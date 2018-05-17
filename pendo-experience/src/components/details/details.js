@@ -41,30 +41,51 @@ export default class Details extends React.Component {
 	componentWillMount() {
 		let url = document.location.pathname;
 		console.log(url);
-		this.props.onDetailsLoad(url);
-		this.props.onTitleChange('Details');
+		if (!url.includes("new")) {
+			this.props.onDetailsLoad(url);
+		}
+
+		this.props.onPageUpdate('Details');
 	}
 
 
 	render() {
 		return (
 			<div className="details-container">
-			 		<Card loading={this.props.loading} title="Quick Information" id="quick-info">
+			 		<Card loading={(localStorage.getItem('loading')) ? false : this.props.loading} title="Quick Information" id="quick-info">
 			 			<img src={this.props.info.photo} alt="pic" id="details-pic"></img>
 						<p>
-							<strong>Name: </strong>{this.props.info.name}
+							<strong>Name: </strong>{ (localStorage.getItem('Name')) ? localStorage.getItem('Name') : this.props.info.name}
 						</p>
 			 		</Card>
-			 		<Card loading={this.props.loading} title="Additional Information" id="additional-info">
+			 		<Card loading={(localStorage.getItem('loading')) ? false : this.props.loading} title="Additional Information" id="additional-info">
 
 						<p>
-			 				<strong>Account: </strong> {this.props.info.account}
+			 				<strong>Account: </strong> {
+			 					 localStorage.getItem('ObjectType') === 'Accounts' ? (
+			 					 	localStorage.getItem('Name')
+			 					 ) : (
+			 					 	this.props.info.account
+			 					 )
+			 				}
 			 			</p>
 			 			<p>
-			 				<strong>Email: </strong>{this.props.info.email}
+			 				<strong>Email: </strong> {
+			 					 localStorage.getItem('Name') ? (
+			 					 	localStorage.getItem('Email')
+			 					 ) : (
+			 					 	this.props.info.account
+			 					 )
+			 				}
 			 			</p>
 						<p>
-			 				<strong>Phone: </strong>{this.props.info.phone}
+			 				<strong>Phone: </strong> {
+			 					 localStorage.getItem('Name') ? (
+			 					 	localStorage.getItem('Phone')
+			 					 ) : (
+			 					 	this.props.info.phone
+			 					 )
+			 				}
 			 			</p>
 
 			 		</Card>
