@@ -53,7 +53,7 @@ export default class Details extends React.Component {
 		return (
 			<div className="details-container">
 			 		<Card loading={(localStorage.getItem('loading')) ? false : this.props.loading} title="Quick Information" id="quick-info">
-			 			<img src={this.props.info.photo} alt="pic" id="details-pic"></img>
+			 			<img src="http://via.placeholder.com/100x100" alt="pic" id="details-pic"></img>
 						<p>
 							<strong>Name: </strong>{ (localStorage.getItem('Name')) ? localStorage.getItem('Name') : this.props.info.name}
 						</p>
@@ -74,7 +74,7 @@ export default class Details extends React.Component {
 			 					 localStorage.getItem('Name') ? (
 			 					 	localStorage.getItem('Email')
 			 					 ) : (
-			 					 	this.props.info.account
+			 					 	this.props.info.email
 			 					 )
 			 				}
 			 			</p>
