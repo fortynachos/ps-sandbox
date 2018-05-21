@@ -28,9 +28,9 @@ const QuoteAttainment = () => (
 		       <CartesianGrid stroke="#ddd" vertical={false}/>
 		       <XAxis dataKey="name"/>
 		       <YAxis/>
-           <Tooltip />
-		       <Bar dataKey="target" stackId="a" fill="#1890ff" />
-		       <Bar dataKey="attained" stackId="a" fill="#011529" />
+           <Tooltip/>
+		       <Bar dataKey="attained" stackId="a" fill="#1890ff" />
+		       <Bar dataKey="target" stackId="a" fill="#011529" />
       </BarChart>
     </ResponsiveContainer>
 		</Card>
