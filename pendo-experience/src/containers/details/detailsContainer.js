@@ -3,7 +3,6 @@ import Details from '../../components/details/details.js';
 import {
 	updateDetailsInputValue,
 	addPostToTimeline,
-	requestDetailsData,
 	fetchDetails
 } from '../../actions/detailActions.js';
 import { changePageTitle } from '../../actions';
@@ -29,14 +28,13 @@ const mapDispatchToProps = (dispatch) => {
 		onDetailsSubmit: (icon, text) => {
 			dispatch(addPostToTimeline(icon, text));
 		},
-		onDetailsRequest: (url) => {
-			dispatch(requestDetailsData(url));
-		},
 		onDetailsLoad: (url) => {
-			dispatch(fetchDetails(url));
+				localStorage.clear();
+				dispatch(fetchDetails(url));
+			
 		},
-		onTitleChange: (text) => {
-			dispatch(changePageTitle(text));
+		onPageUpdate: (text) => {
+			dispatch(changePageTitle(text))
 		}
 	}
 };

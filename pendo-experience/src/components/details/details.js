@@ -1,6 +1,7 @@
 import React from 'react';
 import './details.css';
 import { Card, Tabs, Input, Button, Timeline, Icon } from 'antd';
+import BillBinch from './BillBinch-Avatar-PNG.png';
 
 const TabPane = Tabs.TabPane;
 const { TextArea } = Input;
@@ -8,6 +9,18 @@ const { TextArea } = Input;
 /*
 	Type in New note and add to Timeline Item
 */
+
+const fieldTwoList = {
+	"accounts": "Rep: ",
+	"contacts": "Email: ",
+	"opportunities": "Contact: "
+}
+
+const fieldThreeList = {
+	"accounts": "Territory: ",
+	"contacts": "Phone #: ",
+	"opportunities": "ARR: "
+}
 
 const tabsArray = [
 	{
@@ -36,36 +49,39 @@ const tabsArray = [
 	},
 ]
 
+let detailsURLPage = document.location.pathname.split('/');
+let fieldIdentifier = detailsURLPage[1];
+
 
 export default class Details extends React.Component {
 	componentWillMount() {
 		let url = document.location.pathname;
-		console.log(url);
-		this.props.onDetailsLoad(url);
-		this.props.onTitleChange('Details');
+		if (!url.includes("new")) {
+			this.props.onDetailsLoad(url);
+		}
+
+		this.props.onPageUpdate('Details');
 	}
 
 
 	render() {
 		return (
 			<div className="details-container">
-			 		<Card loading={this.props.loading} title="Quick Information" id="quick-info">
-			 			<img src={this.props.info.photo} alt="pic" id="details-pic"></img>
+			 		<Card loading={(localStorage.getItem('loading')) ? false : this.props.loading} title="Quick Information" id="quick-info">
+			 			<img src={BillBinch} alt="pic" id="details-pic"></img>
 						<p>
-							<strong>Name: </strong>{this.props.info.name}
+							<strong>Name: </strong>
 						</p>
 			 		</Card>
-			 		<Card loading={this.props.loading} title="Additional Information" id="additional-info">
+			 		<Card loading={(localStorage.getItem('loading')) ? false : this.props.loading} title="Additional Information" id="additional-info">
 
 						<p>
-			 				<strong>Account: </strong> {this.props.info.account}
+			 				<strong>{ fieldTwoList[fieldIdentifier] }</strong>
 			 			</p>
 			 			<p>
-			 				<strong>Email: </strong>{this.props.info.email}
+			 				<strong>{ fieldThreeList[fieldIdentifier] } </strong>
 			 			</p>
-						<p>
-			 				<strong>Phone: </strong>{this.props.info.phone}
-			 			</p>
+						
 
 			 		</Card>
 			 		<Tabs

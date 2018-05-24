@@ -6,13 +6,33 @@ const Search = Input.Search;
 const Option = Select.Option;
 const FormItem = Form.Item;
 
+
+const fieldTwoList = {
+	"Accounts": "Rep: ",
+	"Contacts": "Email: ",
+	"Opportunities": "Contact: "
+}
+
+const fieldThreeList = {
+	"Accounts": "Territory: ",
+	"Contacts": "Phone #: ",
+	"Opportunities": "ARR: "
+}
+
+
 export default class Body extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
 			visible: false,
-			OKLoading: false
+			OKLoading: false,
+			addNewFormData: {
+				value: 'Accounts',
+				fieldOne: '',
+				fieldTwo: '',
+				fieldThree: ''
+			}
 		}
 	}
 
@@ -38,9 +58,32 @@ export default class Body extends React.Component {
 			this.setState({
 				OKLoading: false,
 				visible: false
-			})
+			});
+			localStorage.setItem('addNewFormData', JSON.stringify(this.state.addNewFormData));
+			console.log(localStorage);
+			localStorage.setItem('loading', false)
+			// window.location.href = this.state.value + "/new/details"
 		},1000);
 	}
+
+
+	_onHandleSelectChange(value) {
+		let addNewFormData = Object.assign({}, this.state.addNewFormData);
+		addNewFormData["value"] = value
+		this.setState({
+			addNewFormData
+		})
+	}
+
+	_onHandleChange(e) {
+		let addNewFormData = Object.assign({}, this.state.addNewFormData);
+		addNewFormData[e.target.name] = e.target.value;
+
+		this.setState({
+			addNewFormData
+		})
+	}
+
 
 	render() {
 		return (
@@ -55,7 +98,7 @@ export default class Body extends React.Component {
 							title="Create New"
 							visible={this.state.visible}
 							onOk={(e) => this._onOK(e)}
-							confirmLoading={this.state.OKLoading}
+							confirmLoading={ this.state.OKLoading } 
 							onCancel={(e) => this._onCancel(e)}
 						>
 							<Form layout="vertical">
@@ -63,7 +106,7 @@ export default class Body extends React.Component {
 									<h3>
 										Type:
 									</h3>
-									<Select defaultValue="">
+									<Select value={this.state.addNewFormData.value} onChange={(value) => this._onHandleSelectChange(value)}>
 										<Option value="Accounts">Account</Option>
 										<Option value="Contacts">Contact</Option>
 										<Option value="Opportunities">Opportunity</Option>
@@ -73,19 +116,19 @@ export default class Body extends React.Component {
 									<h3>
 										Name:
 									</h3>
-									<Input></Input>
+									<Input value={this.state.addNewFormData.fieldOne} name="fieldOne" onChange={(e) => this._onHandleChange(e)}></Input>
 								</FormItem>
 								<FormItem>
 									<h3>
-										Address:
+										{ fieldTwoList[this.state.addNewFormData.value] }
 									</h3>
-									<Input></Input>
+									<Input value={this.state.addNewFormData.fieldTwo} name="fieldTwo" onChange={(e) => this._onHandleChange(e)}></Input>
 								</FormItem>
 								<FormItem>
 									<h3>
-										Phone #:
+										{ fieldThreeList[this.state.addNewFormData.value] }
 									</h3>
-									<Input></Input>
+									<Input value={this.state.addNewFormData.fieldThree} name="fieldThree" onChange={(e) => this._onHandleChange(e)}></Input>
 								</FormItem>
 							</Form>
 						</Modal>
