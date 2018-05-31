@@ -62,7 +62,7 @@ export default class Body extends React.Component {
 			localStorage.setItem('addNewFormData', JSON.stringify(this.state.addNewFormData));
 			console.log(localStorage);
 			localStorage.setItem('loading', false)
-			// window.location.href = this.state.value + "/new/details"
+			window.location.href = this.state.addNewFormData.value + "/new/details"
 		},1000);
 	}
 
