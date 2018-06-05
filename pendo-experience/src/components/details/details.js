@@ -106,7 +106,7 @@ if (localStorage.getItem('addNewFormData')) {
 
 let logoNum;
 let fieldIdentifier;
-
+/* eslint-disable */
 export default class Details extends React.Component {
 	componentWillMount() {
 		let detailsURLPage = document.location.pathname.split('/');
@@ -186,3 +186,5 @@ export default class Details extends React.Component {
 		)
 	}
 }
+
+/* eslint-enable */
