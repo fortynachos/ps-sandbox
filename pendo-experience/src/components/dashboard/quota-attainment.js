@@ -1,40 +1,61 @@
 import React from 'react';
 import './dashboard.css';
 import { Card } from 'antd';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import {
+  Bar
+} from 'react-chartjs-2';
 
 
-const data = [
-      {name: 'Page A', uv: 4000, pv: 2400, amt: 2400},
-      {name: 'Page B', uv: 3000, pv: 1398, amt: 2210},
-      {name: 'Page C', uv: 2000, pv: 9800, amt: 2290},
-      {name: 'Page D', uv: 2780, pv: 3908, amt: 2000},
-      {name: 'Page E', uv: 1890, pv: 4800, amt: 2181},
-      {name: 'Page F', uv: 2390, pv: 3800, amt: 2500},
-      {name: 'Page G', uv: 3490, pv: 4300, amt: 2100},
-];
+const data = {
+  labels: ['Mona', 'Felix', 'Jess', 'Ravi', 'Kam', 'Walter'],
+  datasets: [
+    {
+      label: 'Attained',
+      backgroundColor: 'rgba(24, 144, 255, .6)',
+      borderColor: 'rgba(24, 144, 255, 1)',
+      borderWidth: 1,
+      hoverBackgroundColor: 'rgba(24, 144, 255, .8)',
+      hoverBorderColor: 'rgba(24, 144, 255, 1)',
+      data: [30000, 135000, 47000, 25000, 56000, 55000]
+    }, 
+    {
+      label:'Goal',
+      backgroundColor: 'rgba(1, 21, 41, .6)',
+      borderColor: 'rgba(1, 21, 41, 1)',
+      borderWidth: 1,
+      hoverBackgroundColor: 'rgba(1, 21, 41, 0.8)',
+      hoverBorderColor: 'rgba(1, 21, 41, 1)',
+      data: [50000, 150000, 80000, 65000, 100000, 120000]
+    }
+  ]
+};
 
 
 const QuoteAttainment = () => (
 
 		<Card title="Quota Attainment" id='quota'>
-    <ResponsiveContainer width="100%" height="85%">
-			<BarChart
-				width={270}
-				height={225}
-				data={data}
-            	margin={{
-            		top: 15, right: 15, left: 0, bottom: 15
-            	}}
-            	>
-		       <CartesianGrid stroke="#f5f5f5"/>
-		       <XAxis dataKey="name"/>
-		       <YAxis/>
-		       <Tooltip/>
-		       <Bar dataKey="pv" stackId="a" fill="#1890ff" />
-		       <Bar dataKey="uv" stackId="a" fill="#011529" />
-      </BarChart>
-    </ResponsiveContainer>
+      <Bar
+        data={data}
+        options={{
+          maintainAspectRatio: false,
+          legend: {
+            display: false
+          },
+          scales: {
+            xAxes: [{
+              stacked: true
+            }],
+            yAxes: [{
+              stacked: true,
+              ticks: {
+                callback: function(value, index, values) {
+                  return '$' + value.toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,');
+                }
+              }
+            }]
+          }
+        }}
+      />
 		</Card>
 	);
 

@@ -1,34 +1,66 @@
 import React from 'react';
 import './dashboard.css';
 import { Card } from 'antd';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import {
+      Doughnut
+} from 'react-chartjs-2';
 
+const data = {
+      labels: [
+            'Qual.',
+            'Solu. Pres.',
+            'Solu. Acceptance',
+            'Proposal',
+            'Pending'
+      ],
+      datasets: [{
+            data: [300, 250, 200, 150, 100],
+            borderWidth: 1,
+            backgroundColor: [
+                  'rgba(24, 144, 255, .6)',
+                  'rgba(1, 21, 41, .6)',
+                  'rgba(22, 101, 170,.6)',
+                  'rgba(65, 182, 196,.6)',
+                  'rgba(8,29,88,.6)'
 
+            ],
+            borderColor: [
+                  'rgba(24, 144, 255, 1)',
+                  'rgba(1, 21, 41, 1)',
+                  'rgba(22, 101, 170,1)',
+                  'rgba(65, 182, 196,1)',
+                  'rgba(8,29,88,1)'
+            ],
+            hoverBorderColor: [
+                  'rgba(24, 144, 255, 1)',
+                  'rgba(1, 21, 41, 1)',
+                  'rgba(22, 101, 170,1)',
+                  'rgba(65, 182, 196,1)',
+                  'rgba(8,29,88,1)'
+            ],
+            hoverBackgroundColor: [
+                  'rgba(24, 144, 255, .8)',
+                  'rgba(1, 21, 41, .8)',
+                  'rgba(22, 101, 170,.8)',
+                  'rgba(65, 182, 196,.8)',
+                  'rgba(8,29,88,.8)'
+            ]
+      }]
+};
 
 
 
 
 const Pipeline = ({pipelineData}) => (
+      <Card title="Pipeline" id="forecast">
+            <Doughnut 
+                  data={data}
+                  height={ 225 } 
+                  options={{
 
-		<Card title="Pipeline" id="forecast">
-		<ResponsiveContainer width="96%" height="80%">
-		<BarChart
-			data={pipelineData}
-            margin={{
-            	top: 15, right: 0, left: 30, bottom: 0
-            }}
-            layout="vertical"
-            barCategoryGap="0%"
-            stackOffset='wiggle'
-            >
-       <CartesianGrid stroke="#f5f5f5"/>
-       <XAxis type="number"/>
-       <YAxis dataKey="name" type="category"/>
-       <Tooltip/>
-       <Bar dataKey="value" fill="#79c7e3" />
-      </BarChart>
-		</ResponsiveContainer>
-		</Card>
+                  }}
+            />
+      </Card>
 	);
 
 
