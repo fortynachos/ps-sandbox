@@ -3,6 +3,8 @@ import { Table } from 'antd';
 import { Link } from 'react-router-dom';
 import 'antd/dist/antd.css';
 
+
+
 const columns = [{
   title: 'Name',
   dataIndex: 'name',
@@ -39,7 +41,7 @@ export default class Accounts extends React.Component {
   }
   render() {
     return(
-      <Table columns={columns} dataSource={this.props.accounts} loading={this.props.loading} style={{margin: "0px 15px"}} scroll={{ y:500}}/>
+      <Table columns={columns} dataSource={this.props.accounts} loading={this.props.loading} style={{margin: "0px 15px"}} size="large" scroll={{ y:450}}/>
     )
   }
 }

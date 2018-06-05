@@ -1,11 +1,11 @@
 
 let initialPipelineStateData = [
-      {name: 'Qualification', value: 6000},
-      {name: 'Discovery', value: 5000},
-      {name: 'Solution Presentation', value: 4000},
-      {name: 'Vendor Acceptance', value: 3000},
-      {name: 'Proposal Review', value: 2000},
-      {name: 'Pending Approval', value: 1000}
+      {name: 'Qual', value: 100000},
+      {name: 'Disco', value: 80000},
+      {name: 'Solu. Pres.', value: 75000},
+      {name: 'Solu. Accept.', value: 40000},
+      {name: 'Final Review', value: 23000},
+      {name: 'Pending', value: 10000}
 ];
 
 // This recenters the pipeline graph no matter what the numbers change to

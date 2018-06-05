@@ -21,6 +21,19 @@ const DetailsInformationReducer = (state = {
         info: action.json,
         loading: action.loading,
       })
+    case 'NEW_DETAILS_DATA':
+      return Object.assign({}, state, {
+        info: [{
+          name: {
+            first: action.name,
+            last: ''
+          },
+          picture: '',
+          location: action.address,
+          cell: action.phone
+        }],
+        loading: action.loading
+      })
     default:
       return state
   }

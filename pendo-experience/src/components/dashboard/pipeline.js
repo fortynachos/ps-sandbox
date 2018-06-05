@@ -57,7 +57,6 @@ const Pipeline = ({pipelineData}) => (
                   data={data}
                   height={ 225 } 
                   options={{
-
                   }}
             />
       </Card>

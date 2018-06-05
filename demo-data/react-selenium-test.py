@@ -21,10 +21,10 @@ class PythonOrgSearch(unittest.TestCase):
         driver = self.driver
 
         # Name of the website, it might be CRM-demo.com or wahtever or localhost:8000
-        driver.get("http://localhost:3000")
+        driver.get("https://pendo-io.atlassian.net/secure/RapidBoard.jspa?rapidView=47&projectKey=APP&view=planning.nodetail&selectedIssue=IDEV-11360")
 
         # Not necessary but a check basically to see the actual title of the page (index.html<title>)
-        self.assertIn("React App", driver.title)
+        # self.assertIn("Bug Triage", driver.title)
 
         # This function can be replaced with ID, class etc.
         # See: http://selenium-python.readthedocs.io/locating-elements.html#locating-elements

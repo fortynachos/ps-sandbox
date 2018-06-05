@@ -1,6 +1,7 @@
 import React from 'react';
 import './dashboard.css';
 import { Card } from 'antd';
+
 import {
   Bar
 } from 'react-chartjs-2';
@@ -29,6 +30,7 @@ const data = {
     }
   ]
 };
+
 
 
 const QuoteAttainment = () => (

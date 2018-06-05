@@ -23,11 +23,7 @@ import {
 
 
 
-/*
-      if you change the value above to an array it will create a centered graph. Use the largest value as 100%.
-      Then just compute a centroid and a range from there on
 
-*/
 
 let data = {
 	labels: [
