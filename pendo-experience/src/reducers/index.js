@@ -7,6 +7,8 @@ import OpportunitiesReducer from './opportunities';
 import accountReducer from './accounts';
 import DetailsInformationReducer from './detailsInformationReducer';
 
+
+// Common reducer to get into one store
 const rootReducer = combineReducers({
 	Navigation,
 	TimelineReducer,

@@ -4,7 +4,7 @@ import { fetchContacts } from '../../actions/contactActions.js';
 import { withRouter } from 'react-router-dom';
 
 
-
+// Get loading boolean and contacts object
 const mapStateToProps = (state) => {
   return {
     contactList: state.ContactReducer.contacts,
@@ -12,6 +12,7 @@ const mapStateToProps = (state) => {
   }
 }
 
+// AJAX call to RESTDB Axios for Contacts
 const mapDispatchToProps = (dispatch) => {
   return {
     onContactsRequest: () => {

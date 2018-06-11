@@ -3,6 +3,9 @@ import './dashboard.css';
 import { Card, Table } from 'antd';
 import { Link } from 'react-router-dom';
 
+
+
+// See https://ant.design/components/table/
 const columns = [{
   title: 'Name',
   dataIndex: 'name',

@@ -1,3 +1,4 @@
+// Placholder, but keep
 let initContacts = [{
   key: '1',
   name: 'P Sherman',
@@ -17,7 +18,7 @@ let initContacts = [{
 
 
 
-
+// Similar to account.js
 const OpportunitiesReducer = (state = {
   opportunities: initContacts,
   loading: false

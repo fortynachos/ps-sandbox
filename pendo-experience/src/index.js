@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-//import axiosMiddleware from 'redux-axios-middleware';
 import { BrowserRouter } from 'react-router-dom';
 
 import { Provider } from 'react-redux';

@@ -5,10 +5,9 @@ import { Link } from 'react-router-dom';
 
 
 
-// the Link in the below is just a test, ideally i would like this to trigger in the components
-// To grab the id of the person/opportunity/account and pull in the right information
 
 
+// See https://ant.design/components/table/
 const columns = [{
   title: 'Name',
   dataIndex: 'name',

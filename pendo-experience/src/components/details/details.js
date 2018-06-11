@@ -18,7 +18,7 @@ const TabPane = Tabs.TabPane;
 const { TextArea } = Input;
 
 
-
+// After a random number from 1-8 is generated this designates which Logo to use
 const LogoObject = {
 	"1": BlueWingLogo,
 	"2": CloudLogo,
@@ -31,10 +31,8 @@ const LogoObject = {
 };
 
 
-/*
-	Type in New note and add to Timeline Item
-*/
 
+// Places the right field objects depending on what /account/contact/opp we are in
 const fieldTwoList = {
 	"ACCOUNTS": "Rep: ",
 	"CONTACTS": "Email: ",
@@ -47,6 +45,7 @@ const fieldThreeList = {
 	"OPPORTUNITIES": "ARR: "
 }
 
+// Object to render the tabs on the Note taking portion
 const tabsArray = [
 	{
 		tab: "New Note",
@@ -74,6 +73,7 @@ const tabsArray = [
 	},
 ]
 
+// Evals the proper object syntax depending on what we are looking (acc/cont/opp)
 const propsEnum = {
 	"ACCOUNTS": {
 		"firstField": "this.props.info.name",
@@ -92,6 +92,7 @@ const propsEnum = {
 	},
 }
 
+// Initiate localStorageCheck variable
 var localStorageCheck;
 // Get LocaStorage Object if it exists and turn JSON to obj
 if (localStorage.getItem('addNewFormData')) {
@@ -104,18 +105,30 @@ if (localStorage.getItem('addNewFormData')) {
 
 let logoNum;
 let fieldIdentifier;
+
+// TURN THIS OFF DURING DEVELOPMENT!
+
 /* eslint-disable */
 export default class Details extends React.Component {
+	// When component mounts run this initiation process
 	componentWillMount() {
+		// Get pathname and separate into an object to name the string broken down and usable
 		let detailsURLPage = document.location.pathname.split('/');
+
+		// Find out whether we are in accounts/contacts/opps
 		fieldIdentifier = detailsURLPage[1].toUpperCase();
 
+		// Check to see if the URL contains "new" (indicates that ADD NEW was used)
+		// If not then load the details based off the URL
 		let url = document.location.pathname;
 		if (!url.includes("new")) {
 			this.props.onDetailsLoad(url);
 		}
 
+		// Get random number 1-8 
 		logoNum = String(Math.floor(Math.random() * 8));
+
+		//Change Page Title to Details
 		this.props.onPageUpdate('Details');
 	}
 
@@ -151,6 +164,7 @@ export default class Details extends React.Component {
 						type="card"
 						tabBarExtraContent={
 							<Button onClick={() => {
+								// Get the active tab and send to on details submit to place the write icon in the Timeline
 								let activeTabHTML = document.getElementsByClassName('ant-tabs-tab-active')[0].innerHTML;
 								this.props.onDetailsSubmit(activeTabHTML, this.props.inputValue);
 							}}>
@@ -159,6 +173,7 @@ export default class Details extends React.Component {
 						}
 					>
 						{
+							// tabs display
 							tabsArray.map(tab => {
 								return (
 									<TabPane tab={tab.tab} key={tab.key}>
@@ -174,7 +189,9 @@ export default class Details extends React.Component {
 						}
 					</Tabs>
 					<Timeline>
-						{this.props.timelinePosts.map(item => {
+						{
+							// Get timeline object and display on page
+							this.props.timelinePosts.map(item => {
 								return <Timeline.Item key={item.key} dot={<Icon type={item.type} />}>{item.entry}</Timeline.Item>
 								}
 							)

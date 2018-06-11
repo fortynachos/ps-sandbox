@@ -1,4 +1,7 @@
+
+
 const DetailsInformationReducer = (state = {
+  // Initializes info object
   info: [{
     name: {
       first: '',
@@ -14,25 +17,15 @@ const DetailsInformationReducer = (state = {
   switch(action.type) {
     case 'REQUEST_DETAILS_DATA':
       return Object.assign({}, state, {
+        // Loading is true
         loading: action.loading
       })
     case 'RECEIVED_DETAILS_DATA':
       return Object.assign({}, state, {
+        // Json object to info object
+        // Loading is false
         info: action.json,
         loading: action.loading,
-      })
-    case 'NEW_DETAILS_DATA':
-      return Object.assign({}, state, {
-        info: [{
-          name: {
-            first: action.name,
-            last: ''
-          },
-          picture: '',
-          location: action.address,
-          cell: action.phone
-        }],
-        loading: action.loading
       })
     default:
       return state

@@ -4,7 +4,7 @@ import { fetchOpportunities } from '../../actions/opportunitiesActions.js';
 import { withRouter } from 'react-router-dom';
 
 
-
+// Gets loading boolean and Opps object
 const mapStateToProps = (state) => {
   return {
     opportunitiesList: state.OpportunitiesReducer.opportunities,
@@ -12,6 +12,7 @@ const mapStateToProps = (state) => {
   }
 }
 
+// AJAX request to RESTDBAxios for Opportunities
 const mapDispatchToProps = (dispatch) => {
   return {
     onOpportunitiesLoad: () => {

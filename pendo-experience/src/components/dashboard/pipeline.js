@@ -5,6 +5,9 @@ import {
       Doughnut
 } from 'react-chartjs-2';
 
+
+// See https://github.com/jerairrest/react-chartjs-2/tree/master/example/src/components
+// & http://www.chartjs.org/
 const data = {
       labels: [
             'Qual.',
@@ -51,7 +54,7 @@ const data = {
 
 
 
-const Pipeline = ({pipelineData}) => (
+const Pipeline = () => (
       <Card title="Pipeline" id="forecast">
             <Doughnut 
                   data={data}

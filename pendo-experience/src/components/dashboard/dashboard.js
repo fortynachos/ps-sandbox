@@ -6,7 +6,7 @@ import QuotaAttainment from '../dashboard/quota-attainment.js';
 import './dashboard.css';
 
 
-
+// Simple enough, takes the different components and displays them in the designated CSS Grid
 const Dashboard = () => (
 	<div className="dashboard-container">
 		<Forecast />

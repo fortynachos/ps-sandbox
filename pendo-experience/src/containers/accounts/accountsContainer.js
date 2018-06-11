@@ -4,14 +4,14 @@ import { withRouter } from 'react-router-dom';
 import { fetchAccounts  } from '../../actions/accountActions';
 
 
-
+// Passing the loading boolean and account object
 const mapStateToProps = state => {
   return {
     accounts: state.accountReducer.accounts,
     loading: state.accountReducer.loading
   }
 }
-
+// Dispatch AJAX request on RESTDBAxios
 const mapDispatchToProps = (dispatch) => {
   return {
     onAccountsLoad: () => {

@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 
 
 
-
+// This is specifically for the dashboard list view for opportunities
 const mapStateToProps = (state) => {
   return {
     opportunitiesList: state.OpportunitiesReducer.opportunities,
@@ -13,6 +13,7 @@ const mapStateToProps = (state) => {
   }
 }
 
+// Fetch Opps thru AJAX request on RESTDBAxios
 const mapDispatchToProps = (dispatch) => {
   return {
     onOpportunitiesLoad: () => {

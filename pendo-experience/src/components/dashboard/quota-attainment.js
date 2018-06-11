@@ -6,7 +6,8 @@ import {
   Bar
 } from 'react-chartjs-2';
 
-
+// See https://github.com/jerairrest/react-chartjs-2/tree/master/example/src/components
+// & http://www.chartjs.org/
 const data = {
   labels: ['Mona', 'Felix', 'Jess', 'Ravi', 'Kam', 'Walter'],
   datasets: [

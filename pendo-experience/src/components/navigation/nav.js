@@ -6,6 +6,9 @@ const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
 
+// Navigation bar
+// Only of note is onNavClick is to update the page title as people click on it. That's all
+
 const Navigation = ({onNavClick}) => (
 	<div className="nav-bar">
 		<div className="logo">

@@ -6,6 +6,8 @@ import FinalContacts from './containers/contacts/contactsContainer.js';
 import FinalOpportunities from './containers/opportunities/opportunitiesContainer.js';
 import FinalDetails from './containers/details/detailsContainer.js';
 
+
+// Routing done here
 const Main = () => (
 	<main>
 		<Switch>

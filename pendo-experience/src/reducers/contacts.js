@@ -1,3 +1,4 @@
+// More placehodler for fun
 let initContacts = [{
   key: '1',
   name: 'P Sherman',
@@ -17,7 +18,7 @@ let initContacts = [{
 
 
 
-
+// Similar to account.js
 const ContactReducer = (state = {
   contacts: initContacts,
   loading: false

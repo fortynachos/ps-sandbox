@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import 'antd/dist/antd.css';
 
 
-
+// See https://ant.design/components/table/
 const columns = [{
   title: 'Name',
   dataIndex: 'name',
