@@ -145,9 +145,13 @@ box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 }
 
 #metrics .ant-card-body {
-	height: 250px;
+	height: 85%;
 }
 
 #quota .ant-card-body {
-	height: 250px;
+	height: 85%;
+}
+
+#pipeline .ant-card-body {
+	height: 85%;
 }

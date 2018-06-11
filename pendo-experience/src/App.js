@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import FinalNavigation from './containers/navigation/navigationContainer.js';
 import FinalBody from './containers/body/bodyContainer.js'
 import './App.css';
-
+import { Icon } from 'antd';
 
 
 class App extends Component {
@@ -12,7 +12,7 @@ class App extends Component {
       	<FinalNavigation />
       	<FinalBody />
         <div className="pendo-sales-engineering-footer">
-          <span>Made with love by Pendo Sales Engineering</span>
+          <p>Made with <span><Icon type="heart" className='heart'/></span> by Pendo Sales Engineering</p>
         </div>
       </div>
     );

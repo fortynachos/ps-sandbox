@@ -2,7 +2,6 @@ import React from 'react';
 import './details.css';
 import { Card, Tabs, Input, Button, Timeline, Icon } from 'antd';
 
-import BillBinch from './imgs/BillBinch-Avatar-PNG.png';
 
 //Logos to be used
 import BlueWingLogo from './imgs/bluewing_logo.png';
@@ -13,6 +12,7 @@ import SpiralLogo from './imgs/spiral_logo.png';
 import WLogo from './imgs/w_logo.png';
 import XLogo from './imgs/x_logo.png';
 import SunLogo from './imgs/sun_logo.png';
+import PlaceholderLogo from './imgs/200x200.png';
 
 const TabPane = Tabs.TabPane;
 const { TextArea } = Input;
@@ -92,13 +92,11 @@ const propsEnum = {
 	},
 }
 
-console.log(propsEnum["CONTACTS"]["secondField"])
 var localStorageCheck;
 // Get LocaStorage Object if it exists and turn JSON to obj
 if (localStorage.getItem('addNewFormData')) {
 	localStorageCheck = true;
 	var addNewFormData = Object.assign({},JSON.parse(localStorage.getItem('addNewFormData')));
-	console.log(addNewFormData);
 	localStorage.clear();
 } else {
 	localStorageCheck = false;
@@ -127,7 +125,7 @@ export default class Details extends React.Component {
 			<div className="details-container">
 			 		<Card loading={ (localStorageCheck)  ? false : this.props.loading} title="Quick Information" id="quick-info">
 			 			{(fieldIdentifier == "CONTACTS") ? (
-			 				<img src={BillBinch} alt="pic" id="details-pic"></img>
+			 				<img src={(localStorageCheck) ? PlaceholderLogo : this.props.info.photo} alt="pic" id="details-pic"></img>
 			 				) : (
 			 				<img src={LogoObject[logoNum]} alt="pic" id="details-pic"></img>	
 			 				)
