@@ -5,6 +5,8 @@ import 'antd/dist/antd.css';
 
 
 // See https://ant.design/components/table/
+
+
 const columns = [{
   title: 'Name',
   dataIndex: 'name',
@@ -37,7 +39,7 @@ export default class Opportunities extends React.Component {
   }
   render() {
     return (
-      <Table columns={columns} dataSource={this.props.opportunitiesList} loading={this.props.loading} style={{margin: "0px 15px"}} scroll={{y:500}}/>
+      <Table columns={columns} dataSource={this.props.opportunitiesList} loading={this.props.loading} style={{margin: "0px 15px"}} scroll={{y:450}}/>
     )
   }
 }

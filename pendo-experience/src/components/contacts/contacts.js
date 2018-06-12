@@ -42,7 +42,7 @@ export default class Contacts extends React.Component {
   }
   render() {
     return (
-      <Table columns={columns} dataSource={this.props.contactList} loading={this.props.loading} style={{margin: "0px 15px"}} scroll={{y: 500}}/>
+      <Table columns={columns} dataSource={this.props.contactList} loading={this.props.loading} style={{margin: "0px 15px"}} scroll={{y: 450}}/>
     );
   }
 }
