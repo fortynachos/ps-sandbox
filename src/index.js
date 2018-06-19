@@ -7,7 +7,6 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
-import logger from 'redux-logger';
 import rootReducer from './reducers';
 import thunk from 'redux-thunk';
 import axios from 'axios';
@@ -16,7 +15,6 @@ import 'antd/dist/antd.css';
 const store = createStore(
 	rootReducer,
 	applyMiddleware(
-		logger,
 		thunk
 		)
 	);

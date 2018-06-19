@@ -11,6 +11,47 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script type="text/javascript">
+      var accounts = [
+        "Stark Industries",
+        "Wayne Enterprises",
+        "Hooli",
+        "Dunder Mifflin US",
+        "Willy Wonka Industrial",
+        "Pied Piper",
+        "Dunder Mifflin EU",
+        "Associated Strategies",
+        "Krusty Krab",
+        "Sterling Cooper"
+      ];
+
+      var weight = [
+        300,
+        175,
+        125,
+        100,
+        75,
+        75,
+        50,
+        50,
+        25,
+        25
+      ]
+
+      function pickUsingWeights(items, weights) {
+        var total = 0;
+        var ranges = weights.slice(0);
+
+        for(var i = 0, len = weights.length; i < len; i++) {
+          ranges[i] = [total, total += ranges[i]];
+        }
+        var randomNumber = parseInt(Math.random() * total);
+        for(;randomNumber < ranges[--i][0];);
+        return items[i];
+      }
+
+      var account_id = pickUsingWeights(accounts, weight);
+    </script>
     <script>
   (function(apiKey){
     (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=[];
@@ -32,7 +73,7 @@
       },
 
       account: {
-        // id:           'ACCOUNT-UNIQUE-ID' // Highly recommended
+        id:    account_id        // Highly recommended
         // name:         // Optional
         // planLevel:    // Optional
         // planPrice:    // Optional
