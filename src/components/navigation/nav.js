@@ -19,7 +19,6 @@ const Navigation = ({onNavClick}) => (
 		</div>
 		<Menu
 			theme='dark'
-			style={{width: 240}}
 			id="main-menu"
 		>
 			<Menu.Item key="1">
