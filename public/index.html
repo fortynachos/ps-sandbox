@@ -1,115 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
     <!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    <script type="text/javascript">
-      var accounts = [
-        "Stark Industries",
-        "Wayne Enterprises",
-        "Hooli",
-        "Dunder Mifflin US",
-        "Willy Wonka Industrial",
-        "Pied Piper",
-        "Dunder Mifflin EU",
-        "Associated Strategies",
-        "Krusty Krab",
-        "Sterling Cooper"
-      ];
+    manifest.json provides metadata used when your web app is added to the
+    homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+-->
+<link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+<link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<script type="text/javascript">
+var accounts = [
+    "Stark Industries",
+    "Wayne Enterprises",
+    "Hooli",
+    "Dunder Mifflin US",
+    "Willy Wonka Industrial",
+    "Pied Piper",
+    "Dunder Mifflin EU",
+    "Associated Strategies",
+    "Krusty Krab",
+    "Sterling Cooper"
+];
 
-      var weight = [
-        300,
-        175,
-        125,
-        100,
-        75,
-        75,
-        50,
-        50,
-        25,
-        25
-      ]
+let month = new Date().getMonth()
+let weight;
 
-      function pickUsingWeights(items, weights) {
-        var total = 0;
-        var ranges = weights.slice(0);
+if (month % 2) {
+    weight = [ 300, 175, 125, 100, 75, 75, 50, 50, 25, 25 ];
+} else {
+    weight = [ 300, 25, 50, 50, 75, 75, 100, 125, 175, 25 ];
+}
 
-        for(var i = 0, len = weights.length; i < len; i++) {
-          ranges[i] = [total, total += ranges[i]];
-        }
-        var randomNumber = parseInt(Math.random() * total);
-        for(;randomNumber < ranges[--i][0];);
-        return items[i];
-      }
+function pickUsingWeights(items, weights) {
+    var total = 0;
+    var ranges = weights.slice(0);
 
-      var account_id = pickUsingWeights(accounts, weight);
-    </script>
-    <script>
-  (function(apiKey){
-    (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=[];
-      v=['initialize','identify','updateOptions','pageLoad'];for(w=0,x=v.length;w<x;++w)(function(m){
-      o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
-      y=e.createElement(n);y.async=!0;y.src='https://cdn.pendo.io/agent/static/'+apiKey+'/pendo.js';
-      z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
+    for(var i = 0, len = weights.length; i < len; i++) {
+        ranges[i] = [total, total += ranges[i]];
+    }
+    var randomNumber = parseInt(Math.random() * total);
+    for(;randomNumber < ranges[--i][0];);
+    return items[i];
+}
 
-    // Call this whenever information about your visitors becomes available
-    // Please use Strings, Numbers, or Bools for value types.
-    pendo.initialize({
-      visitor: {
-        id:              'VISITOR-UNIQUE-ID'   // Required if user is logged in
-        // email:        // Optional
-        // role:         // Optional
+var account_id = pickUsingWeights(accounts, weight);
 
-        // You can add any additional visitor level key-values here,
-        // as long as it's not one of the above reserved names.
-      },
+let accString = account_id.replace(/\s/, '');
+let randNum = Math.random() * 100;
+let visitor;
 
-      account: {
-        id:    account_id        // Highly recommended
-        // name:         // Optional
-        // planLevel:    // Optional
-        // planPrice:    // Optional
-        // creationDate: // Optional
+if (randNum < 25) {
+    visitor = 'visitor1@' + accString + '.com';
+} else if (randNum <= 50) {
+    visitor = 'visitor2@' + accString + '.com';
+} else if (randNum <= 65) {
+    visitor = 'visitor3@' + accString + '.com';
+} else if (randNum <= 80) {
+    visitor = 'visitor4@' + accString + '.com';
+} else if (randNum <= 90) {
+    visitor = 'visitor5@' + accString + '.com';
+} else if (randNum <= 95) {
+    visitor = 'visitor6@' + accString + '.com';
+} else {
+    visitor = 'visitor7@' + accString + '.com';
+}
 
-        // You can add any additional account level key-values here,
-        // as long as it's not one of the above reserved names.
-      }
-    });
-  })('74924fb4-e18c-42b1-664b-47ed918c3a45');
 </script>
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<script>
+(function(apiKey){
+    (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=[];
+    v=['initialize','identify','updateOptions','pageLoad'];for(w=0,x=v.length;w<x;++w)(function(m){
+        o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
+        y=e.createElement(n);y.async=!0;y.src='https://cdn.pendo.io/agent/static/'+apiKey+'/pendo.js';
+        z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Pendo Experience</title>
-  </head>
-  <body>
+        // Call this whenever information about your visitors becomes available
+        // Please use Strings, Numbers, or Bools for value types.
+        pendo.initialize({
+            visitor: {
+                id:              visitor || 'VISITOR-UNIQUE-ID'   // Required if user is logged in
+                // email:        // Optional
+                // role:         // Optional
+
+                // You can add any additional visitor level key-values here,
+                // as long as it's not one of the above reserved names.
+            },
+
+            account: {
+                id:    account_id        // Highly recommended
+                // name:         // Optional
+                // planLevel:    // Optional
+                // planPrice:    // Optional
+                // creationDate: // Optional
+
+                // You can add any additional account level key-values here,
+                // as long as it's not one of the above reserved names.
+            }
+        });
+    })('74924fb4-e18c-42b1-664b-47ed918c3a45');
+</script>
+<!--
+Notice the use of %PUBLIC_URL% in the tags above.
+It will be replaced with the URL of the `public` folder during the build.
+Only files inside the `public` folder can be referenced from the HTML.
+
+Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+work correctly both with client-side routing and a non-root public URL.
+Learn how to configure a non-root public URL by running `npm run build`.
+-->
+<title>Pendo Experience</title>
+</head>
+<body>
     <noscript>
-      You need to enable JavaScript to run this app.
+        You need to enable JavaScript to run this app.
     </noscript>
     <div id="root"></div>
     <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    This HTML file is a template.
+    If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    You can add webfonts, meta tags, or analytics to this file.
+    The build step will place the bundled scripts into the <body> tag.
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    To begin the development, run `npm start` or `yarn start`.
+    To create a production bundle, use `npm run build` or `yarn build`.
+-->
+</body>
 </html>
