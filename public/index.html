@@ -34,6 +34,21 @@ if (month % 2) {
     weight = [ 300, 25, 50, 50, 75, 75, 100, 125, 175, 25 ];
 }
 
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+
+    var cleanName = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + cleanName + '(=([^&#]*)|&|#|$)');
+    var results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+let accountParam = getParameterByName('accountId');
+let visitorParam = getParameterByName('visitorId');
+
 function pickUsingWeights(items, weights) {
     var total = 0;
     var ranges = weights.slice(0);
@@ -81,7 +96,7 @@ if (randNum < 25) {
         // Please use Strings, Numbers, or Bools for value types.
         pendo.initialize({
             visitor: {
-                id:              visitor || 'VISITOR-UNIQUE-ID'   // Required if user is logged in
+                id:              visitorParam || visitor || 'VISITOR-UNIQUE-ID'   // Required if user is logged in
                 // email:        // Optional
                 // role:         // Optional
 
@@ -90,7 +105,7 @@ if (randNum < 25) {
             },
 
             account: {
-                id:    account_id        // Highly recommended
+                id:    accountParam || account_id        // Highly recommended
                 // name:         // Optional
                 // planLevel:    // Optional
                 // planPrice:    // Optional
