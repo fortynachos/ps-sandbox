@@ -63,7 +63,7 @@ function pickUsingWeights(items, weights) {
 
 var account_id = pickUsingWeights(accounts, weight);
 
-let accString = account_id.replace(/\s/, '');
+let accString = account_id.replace(/\s/g, '');
 let randNum = Math.random() * 100;
 let visitor;
 
