@@ -49,7 +49,8 @@ const fieldThreeList = {
 const tabsArray = [
 	{
 		tab: "New Note",
-		key: "1"
+		key: "1",
+        id: 'new-note'
 	},
 	{
 		tab: "Email",
@@ -125,7 +126,7 @@ export default class Details extends React.Component {
 			this.props.onDetailsLoad(url);
 		}
 
-		// Get random number 1-8 
+		// Get random number 1-8
 		logoNum = String(Math.floor(Math.random() * 8));
 
 		//Change Page Title to Details
@@ -140,11 +141,11 @@ export default class Details extends React.Component {
 			 			{(fieldIdentifier == "CONTACTS") ? (
 			 				<img src={(localStorageCheck) ? PlaceholderLogo : this.props.info.photo} alt="pic" id="details-pic"></img>
 			 				) : (
-			 				<img src={LogoObject[logoNum]} alt="pic" id="details-pic"></img>	
+			 				<img src={LogoObject[logoNum]} alt="pic" id="details-pic"></img>
 			 				)
 			 			}
 						<p>
-							<strong>Name: </strong> { (localStorageCheck) ? addNewFormData.fieldOne : eval(propsEnum[fieldIdentifier]["firstField"])} 
+							<strong>Name: </strong> { (localStorageCheck) ? addNewFormData.fieldOne : eval(propsEnum[fieldIdentifier]["firstField"])}
 						</p>
 			 		</Card>
 			 		<Card loading={ (localStorageCheck) ? false : this.props.loading } title="Additional Information" id="additional-info">
@@ -153,9 +154,9 @@ export default class Details extends React.Component {
 			 				<strong>{ fieldTwoList[fieldIdentifier] }</strong> { (localStorageCheck) ? addNewFormData.fieldTwo : eval(propsEnum[fieldIdentifier]["secondField"]) }
 			 			</p>
 			 			<p>
-			 				<strong>{ fieldThreeList[fieldIdentifier] }</strong> {(localStorageCheck) ? addNewFormData.fieldThree : eval(propsEnum[fieldIdentifier]["thirdField"])} 
+			 				<strong>{ fieldThreeList[fieldIdentifier] }</strong> {(localStorageCheck) ? addNewFormData.fieldThree : eval(propsEnum[fieldIdentifier]["thirdField"])}
 			 			</p>
-						
+
 
 			 		</Card>
 			 		<Tabs
@@ -163,7 +164,7 @@ export default class Details extends React.Component {
 						d="entry-tabs"
 						type="card"
 						tabBarExtraContent={
-							<Button onClick={() => {
+							<Button id="submit-btn" onClick={() => {
 								// Get the active tab and send to on details submit to place the write icon in the Timeline
 								let activeTabHTML = document.getElementsByClassName('ant-tabs-tab-active')[0].innerHTML;
 								this.props.onDetailsSubmit(activeTabHTML, this.props.inputValue);
@@ -176,7 +177,7 @@ export default class Details extends React.Component {
 							// tabs display
 							tabsArray.map(tab => {
 								return (
-									<TabPane tab={tab.tab} key={tab.key}>
+									<TabPane tab={tab.tab} key={tab.key} id={tab.id} className={tab.id}>
 										<TextArea
 											rows={6}
 											className="timeline-entry"
