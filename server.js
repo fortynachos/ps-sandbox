@@ -5,5 +5,5 @@ const app = new Koa();
 
 app.use(serve(path.join(__dirname, 'build')));
 
-const port = process.env.PORT || 3003;
+const port = process.env.PORT || 80;
 app.listen(port);
