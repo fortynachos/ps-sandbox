@@ -22,7 +22,7 @@ module.exports = async (browser) => {
         await guide.dispose();
     }
 
-    await newPage.click('.ant-menu-item [href="/opportunities"]')
+    await newPage.click('.ant-menu-item [href="/contacts"]')
     await newPage.waitFor('.ant-spin-container.ant-spin-blur', { hidden: true });
 
     allSelectors.unshift('.ant-table-row-level-0 a');

@@ -22,13 +22,12 @@ module.exports = async (browser) => {
         await guide.dispose();
     }
 
-    await newPage.click('.ant-menu-item [href="/opportunities"]')
+    await newPage.click('.ant-menu-item [href="/accounts"]')
     await newPage.waitFor('.ant-spin-container.ant-spin-blur', { hidden: true });
 
-    allSelectors.unshift('.ant-table-row-level-0 a');
+    allSelectors.unshift('#add-new');
 
-    const distributions = [ 50, 65, 75, 85, 90, 94, 97, 99, 100 ];
-    let selection = randomize(allSelectors, distributions);
+    let selection = randomize(allSelectors);
 
     await newPage.click(selection);
     await newPage.close();
