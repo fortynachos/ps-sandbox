@@ -66,21 +66,29 @@ var account_id = pickUsingWeights(accounts, weight);
 let accString = account_id.replace(/\s/g, '');
 let randNum = Math.random() * 100;
 let visitor;
+let role;
 
 if (randNum < 25) {
     visitor = 'visitor1@' + accString + '.com';
+    role = 'admin';
 } else if (randNum <= 50) {
     visitor = 'visitor6@' + accString + '.com';
+    role = 'admin';
 } else if (randNum <= 65) {
     visitor = 'visitor4@' + accString + '.com';
+    role = 'user';
 } else if (randNum <= 80) {
     visitor = 'visitor7@' + accString + '.com';
+    role = 'user';
 } else if (randNum <= 90) {
     visitor = 'visitor5@' + accString + '.com';
+    role = 'user';
 } else if (randNum <= 95) {
     visitor = 'visitor3@' + accString + '.com';
+    role = 'read-only';
 } else {
     visitor = 'visitor2@' + accString + '.com';
+    role = 'read-only';
 }
 
 </script>
@@ -98,7 +106,7 @@ if (randNum < 25) {
             visitor: {
                 id:              visitorParam || visitor || 'VISITOR-UNIQUE-ID'   // Required if user is logged in
                 // email:        // Optional
-                // role:         // Optional
+                role:            role || 'user'
 
                 // You can add any additional visitor level key-values here,
                 // as long as it's not one of the above reserved names.
