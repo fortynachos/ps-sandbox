@@ -10,9 +10,9 @@ import {
 // & http://www.chartjs.org/
 const data = {
       labels: [
-            'Qual.',
-            'Solu. Pres.',
-            'Solu. Acceptance',
+            'Qual',
+            'Sol Pres.',
+            'Sol Acc.',
             'Proposal',
             'Pending'
       ],
@@ -56,9 +56,9 @@ const data = {
 
 const Pipeline = () => (
       <Card title="Pipeline" id="forecast">
-            <Doughnut 
+            <Doughnut
                   data={data}
-                  height={ 225 } 
+                  height={ 215 }
                   options={{
                   }}
             />

@@ -1,18 +1,17 @@
 .App {
-  height: 100%;
+    height: 100%;
 }
 
 
 .pendo-sales-engineering-footer {
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 5px;
-  width: 100%;
-  text-align: center;
-  padding-left: 17%;
-  color: rgba(0, 0, 0, 0.85);
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 5px;
+    width: 83%;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.85);
 }
 
 .heart {
-	color: #1890ff;
+    color: #1890ff;
 }

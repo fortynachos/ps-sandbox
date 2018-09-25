@@ -1,6 +1,6 @@
 import React from 'react';
 import Main from '../../main.js';
-import { Input, Button, Modal,Form, Select } from 'antd';
+import { Icon, Input, Button, Modal,Form, Select } from 'antd';
 import './body.css';
 
 
@@ -115,7 +115,7 @@ export default class Body extends React.Component {
 							title="Create New"
 							visible={this.state.visible}
 							onOk={(e) => this._onOK(e)}
-							confirmLoading={ this.state.OKLoading } 
+							confirmLoading={ this.state.OKLoading }
 							onCancel={(e) => this._onCancel(e)}
 						>
 							<Form layout="vertical">
@@ -159,6 +159,9 @@ export default class Body extends React.Component {
 						<Main />
 					</div>
 				</div>
+                <div className="pendo-sales-engineering-footer">
+                  <span>Made with <span><Icon type="heart" className='heart'/></span> by Pendo Sales Engineering</span>
+                </div>
 			</div>
 		)
 	}
