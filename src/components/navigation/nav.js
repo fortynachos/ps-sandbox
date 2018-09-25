@@ -50,6 +50,8 @@ const Navigation = ({onNavClick}) => (
 		</Menu>
 		<Menu
 			theme="dark"
+            className="settings-menu"
+            subMenuCloseDelay="1"
 			style={{
 				"bottom": "10px",
 				"position": "absolute",
