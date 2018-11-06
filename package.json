@@ -1,6 +1,6 @@
 {
   "name": "pendo-experience",
-  "homepage": "https://paulnstanley.github.io/ps-pendoexperience-ghpages"
+  "homepage": "https://paulnstanley.github.io/ps-pendoexperience-ghpages",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
