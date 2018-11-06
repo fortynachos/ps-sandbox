@@ -1,24 +1,7 @@
-# Pendo Experience
+# PS / Pendo Experience
 
-Demo Environment code for Pendo Experience. 
+This is a clone of https://github.com/pendo-io/pendo-experience.
 
-## Getting Started
+The intent is to remove the Pendo snippet and give new Professional Services hires a sandbox to learn installing and using Pendo. 
 
-In order to get the project up and running you will need:
-
-```
-Node JS
-NPM
-```
-
-To clone the run the app locally:
-
-```
-git clone https://github.com/pendo-io/pendo-experience.git
-cd pendo-experience/pendo-experience
-npm start
-
-Will be running at http://localhost:3000/
-```
-
-
+Further directions forthcoming. 
