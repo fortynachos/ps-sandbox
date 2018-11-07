@@ -24,9 +24,9 @@ const store = createStore(
 //Do RestDBAxios.get() instead to get what you want
 //Make sure to import it in though
 export const RestDBAxios = axios.create({
-	baseURL: 'https://petest-9f02.restdb.io/rest/',
+	baseURL: 'https://psexp-5aa8.restdb.io/rest/', //PS Exp - Replace this with your unique RestDB URL
 	headers: {
-		"x-apikey": "5ad6732125a622ae4d5283ab",
+		"x-apikey": "5be310b4e9b6a3749284515f", 
 	},
 	responseType: 'json',
 });
