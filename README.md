@@ -1,7 +1,1 @@
-# PS / Pendo Experience
-
-This is a clone of https://github.com/pendo-io/pendo-experience.
-
-The intent is to remove the Pendo snippet and give new Professional Services hires a sandbox to learn installing and using Pendo. 
-
-Further directions forthcoming. 
+Instructions: https://docs.google.com/document/d/1CbKy6LMz_t5rKF9narVL1PGMGUNfVySObEcLltb5Ovw/edit?usp=sharing
