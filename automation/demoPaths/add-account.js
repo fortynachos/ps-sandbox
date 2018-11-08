@@ -6,7 +6,7 @@ const allSelectors = listSelectors.concat(layoutSelectors);
 module.exports = async (browser) => {
     const newPage = await browser.newPage();
 
-    await newPage.goto('https://paulnstanley.github.io/');
+    await newPage.goto('https://paulnstanley.github.io/ps-pendoexperience-ghpages/');
     await newPage.waitFor(500);
 
     await newPage.evaluate(() => {
