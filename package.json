@@ -1,12 +1,12 @@
 {
   "name": "pendo-experience",
-  "homepage": "https://paulnstanley.github.io/ps-pendoexperience-ghpages",
+  "homepage": "https://fortynachos.github.io/ps-sandbox",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "antd": "^3.9.3",
-    "axios": "^0.18.0",
-    "bootstrap": "^4.0.0",
+    "axios": "^0.18.1",
+    "bootstrap": "^4.3.1",
     "chart.js": "^2.7.2",
     "history": "^4.7.2",
     "koa": "^2.5.3",
