@@ -25,7 +25,7 @@ box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 	height: 100%;
 	position:absolute;
 	z-index: 1000;
-	left: 25%;
+	left: 45%;
 	top: 65%;
 }
 
@@ -55,9 +55,10 @@ box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 	margin-left: 25%;
 }
 
-#cloud-logo {
-	height: 130%;
+#pizza-logo {
+	height: 75%;
 	width: auto;
 	position: absolute;
-	left: 15%;
+	left: 25%;
+	top: 25%;
 }
