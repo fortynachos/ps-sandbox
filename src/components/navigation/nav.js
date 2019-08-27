@@ -15,7 +15,7 @@ const Navigation = ({onNavClick}) => (
 			<h3>
 				PizzaCRM
 			</h3>
-			<img src={require("../../../public/imgs/pizza_logo.png")} alt="logo" id="pizza-logo"/>
+			<img src={require("./pizza_logo.png")} alt="logo" id="pizza-logo"/>
 		</div>
 		<Menu
 			theme='dark'
