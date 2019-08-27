@@ -11,12 +11,14 @@ const MenuItemGroup = Menu.ItemGroup;
 
 const Navigation = ({onNavClick}) => (
 	<div className="nav-bar">
-		<div className="logo">
-			<h3>
-				PizzaCRM
-			</h3>
-			<img src={require("./pizza_logo.png")} alt="logo" id="pizza-logo"/>
-		</div>
+		<a href="https://fortynachos.github.io/ps-sandbox">
+			<div className="logo">
+				<h3>
+					PizzaCRM
+				</h3>
+				<img src={require("./pizza_logo.png")} alt="logo" id="pizza-logo"/>
+			</div>
+		</a>
 		<Menu
 			theme='dark'
 			id="main-menu"

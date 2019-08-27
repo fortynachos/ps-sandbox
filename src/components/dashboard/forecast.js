@@ -34,7 +34,7 @@ let data = {
 				2460000
 			],
 			backgroundColor: [
-				'rgba(24, 144, 255, .6)'
+				'rgb(106, 197, 179)'
 			]
 		}
 	]
