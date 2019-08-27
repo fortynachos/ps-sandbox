@@ -1,3 +1,20 @@
+.ant-menu.ant-menu-dark .ant-menu-item-selected {
+	background-color: #6ac5b3;
+}
+
+.ant-btn-primary {
+	background-color: #6ac5b3;
+	border-color: #6ac5b3;
+}
+
+a {
+	color: #6ac5b3;
+}
+
+a:hover {
+	color: #6acece;
+}
+
 .widget-container {
 	background-color: white;
 	margin: 15px;
