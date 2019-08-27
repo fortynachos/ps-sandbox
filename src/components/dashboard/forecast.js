@@ -42,7 +42,7 @@ let data = {
 
 
 const Forecast = () => (
-	<Card title="Forecast" id="metrics">
+	<Card title="Pizza Sales Forecast" id="metrics">
 		<Line
 			data={data}
 			options={{

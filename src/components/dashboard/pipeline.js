@@ -10,11 +10,11 @@ import {
 // & http://www.chartjs.org/
 const data = {
       labels: [
-            'Qual',
-            'Sol Pres.',
-            'Sol Acc.',
-            'Proposal',
-            'Pending'
+            'Dough Making',
+            'Sauce Making',
+            'Tossing',
+            'Baking',
+            'Delivery'
       ],
       datasets: [{
             data: [300, 250, 200, 150, 100],
@@ -55,10 +55,10 @@ const data = {
 
 
 const Pipeline = () => (
-      <Card title="Pipeline" id="forecast">
+      <Card title="Pizza Production" id="forecast">
             <Doughnut
                   data={data}
-                  height={ 215 }
+                  height={ 200 }
                   options={{
                   }}
             />

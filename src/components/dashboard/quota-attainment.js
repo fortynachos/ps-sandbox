@@ -18,7 +18,7 @@ const data = {
       borderWidth: 1,
       hoverBackgroundColor: 'rgba(24, 144, 255, .8)',
       hoverBorderColor: 'rgba(24, 144, 255, 1)',
-      data: [30000, 135000, 47000, 25000, 56000, 55000]
+      data: [3000, 13500, 4700, 2500, 5600, 5500]
     }, 
     {
       label:'Goal',
@@ -27,7 +27,7 @@ const data = {
       borderWidth: 1,
       hoverBackgroundColor: 'rgba(1, 21, 41, 0.8)',
       hoverBorderColor: 'rgba(1, 21, 41, 1)',
-      data: [50000, 150000, 80000, 65000, 100000, 120000]
+      data: [5000, 15000, 8000, 6500, 10000, 12000]
     }
   ]
 };
@@ -36,7 +36,7 @@ const data = {
 
 const QuoteAttainment = () => (
 
-		<Card title="Quota Attainment" id='quota'>
+		<Card title="Delivery Quota" id='quota'>
       <Bar
         data={data}
         options={{
