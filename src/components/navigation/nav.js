@@ -22,7 +22,7 @@ const Navigation = ({onNavClick}) => (
 			id="main-menu"
 		>
 			<Menu.Item key="1">
-				<Link to='/' onClick={() => onNavClick('Dashboard')}>
+				<Link to='/dashboard' onClick={() => onNavClick('Dashboard')}>
 					<Icon type="home" />
 					<span>Dashboard</span>
 				</Link>
