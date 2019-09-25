@@ -155,6 +155,13 @@ export default class Body extends React.Component {
 						</h1>
 					</div>
 					<div className="main-content">
+					<a id="liveagent_button_online_5734T000000TfQo" href="javascript://Chat" onclick="liveagent.startChat('5734T000000TfQo')">OH YEAH</a><div id="liveagent_button_offline_5734T000000TfQo">Offline Sadness</div>
+					<script type="text/javascript">
+							if (!window._laq) { window._laq = []; }
+							window._laq.push(function(){liveagent.showWhenOnline('5734T000000TfQo', document.getElementById('liveagent_button_online_5734T000000TfQo'));
+							liveagent.showWhenOffline('5734T000000TfQo', document.getElementById('liveagent_button_offline_5734T000000TfQo'));
+							});
+					</script>	
 						<Main />
 					</div>
 				</div>
