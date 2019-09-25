@@ -101,7 +101,6 @@ export default class Body extends React.Component {
 		})
 	}
 
-
 	render() {
 		return (
 			<div className="body-container">
@@ -154,9 +153,9 @@ export default class Body extends React.Component {
 						<h1>
 							{this.props.title}
 						</h1>
-						<a id="liveagent_button_online_5734P000000kWNg" href="javascript://Chat" onclick="liveagent.startChat('5734P000000kWNg')">Hey Listen!</a><div id="liveagent_button_offline_5734P000000kWNg">Reach out now!</div>
 					</div>
 					<div className="main-content">
+					<	a id="liveagent_button_online_5734P000000kWNg" href="javascript://Chat" onclick="liveagent.startChat('5734P000000kWNg')">Hey Listen!</a><div id="liveagent_button_offline_5734P000000kWNg">Reach out now!</div>
 						<Main />
 					</div>
 				</div>
