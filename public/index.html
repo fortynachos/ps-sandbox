@@ -112,84 +112,64 @@ if (randNum < 25) {
          
             account: {
               id:       accountParam || account_id
+            },
+
+            events: {
+              ready: function () {
+              pendo.addBodyMutationListener();
             }
+          }
         });
+
+        pendo.addAltText = function(guideId) {
+          var badgeId = pendo.badgesShown[guideId].domJson.children[1].props.id;
+          if (pendo.dom("#"+badgeId+ " img")[0]) {
+            pendo.dom("#"+badgeId+ " img")[0].setAttribute('aria-role', 'tooltip');
+            var guideName = pendo.guides.filter(elem=>elem.id==guideId)[0].name;
+            if (guideName.includes("${")) {
+              var guideNameAltText = guideName.substring(guideName.indexOf("${")+2, guideName.indexOf("}"));
+            }
+
+            if(pendo.guides.filter(elem=>elem.id==guideId)[0].name == "Resource Center") {
+              pendo.dom("#"+badgeId+ " img")[0].setAttribute('alt-text', "Resource Center");
+            } else if (guideNameAltText) {
+              pendo.dom("#"+badgeId+ " img")[0].setAttribute('alt-text', guideNameAltText);
+            } else {
+              pendo.dom("#"+badgeId+ " img")[0].setAttribute('alt-text', "tooltip badge");
+            }
+          }
+        }
+
+        pendo.addBodyMutationListener = function() {
+          var target = document.querySelector('body');
+
+          // create an observer instance
+          var observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+              if (mutation.addedNodes.length) {
+                if (mutation.addedNodes[0].className.includes("_pendo-badge")) {
+                  if (pendo.badgesShown) {
+                    var badgeList = pendo.badgesShown;
+                    Object.keys(badgeList).forEach(gid => pendo.addAltText(gid)); 
+                  }
+                }
+              }
+            })
+          })
+
+          var config = {
+            attributeFilter: ['data-layout'],
+            attributes: true,
+            childList: true,
+            characterData: true,
+            subtree: false
+          };
+
+          observer.observe(target, config);
+        }
 })('9703343b-1bba-4db6-799d-6637c3ff0aa8');
 </script>
 
-<script type='text/javascript' src='https://c.la4-c1-ph2.salesforceliveagent.com/content/g/js/46.0/deployment.js'></script>
-<script type='text/javascript'>
-    liveagent.init('https://d.la4-c1-ph2.salesforceliveagent.com/chat', '5724T000000Tepm', '00D4T000000GWxj');
-</script>
-<script type="text/javascript">
-    if (!window._laq) { window._laq = []; }
-    window._laq.push(function(){liveagent.showWhenOnline('5734T000000TfQo', document.getElementById('liveagent_button_online_5734T000000TfQo'));
-    liveagent.showWhenOffline('5734T000000TfQo', document.getElementById('liveagent_button_offline_5734T000000TfQo'));
-    });
-</script>	
-
-<style type='text/css'>
-	.embeddedServiceHelpButton .helpButton .uiButton {
-		background-color: #005290;
-		font-family: "Arial", sans-serif;
-	}
-	.embeddedServiceHelpButton .helpButton .uiButton:focus {
-		outline: 1px solid #005290;
-	}
-</style>
-
-<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
-<script type='text/javascript'>
-	var initESW = function(gslbBaseURL) {
-		embedded_svc.settings.displayHelpButton = true; //Or false
-		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
-
-		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
-		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
-
-		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
-		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
-
-		// Settings for Chat
-		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
-			// Returns a valid button ID.
-		//};
-		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
-		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
-		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
-
-		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
-		embedded_svc.settings.entryFeature = 'LiveAgent';
-
-		embedded_svc.init(
-			'https://na136.salesforce.com',
-			'https://pendo-chat-99-developer-edition.na136.force.com/liveAgentSetupFlow',
-			gslbBaseURL,
-			'00D4T000000GWxj',
-			'Chat_Agents',
-			{
-				baseLiveAgentContentURL: 'https://c.la4-c1-ph2.salesforceliveagent.com/content',
-				deploymentId: '5724T000000TfEn',
-				buttonId: '5734T000000Tflj',
-				baseLiveAgentURL: 'https://d.la4-c1-ph2.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'Chat_Agents',
-				isOfflineSupportEnabled: true
-			}
-		);
-	};
-
-	if (!window.embedded_svc) {
-		var s = document.createElement('script');
-		s.setAttribute('src', 'https://na136.salesforce.com/embeddedservice/5.0/esw.min.js');
-		s.onload = function() {
-			initESW(null);
-		};
-		document.body.appendChild(s);
-	} else {
-		initESW('https://service.force.com');
-	}
-</script>
     
 
 <!-- DON'T FORGET PROPER METADATA! -->
