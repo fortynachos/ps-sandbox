@@ -132,7 +132,6 @@ if (randNum < 25) {
             if (guideName.includes("$|")) {
               var guideNameAltText = guideName.substring(guideName.indexOf("$|")+2, guideName.indexOf("|"));
             }
-            var guideNameAltText = "foo";
 
             if(pendo.guides.filter(elem=>elem.id==guideId)[0].name == "Resource Center") {
               pendo.dom("#"+badgeId+ " img")[0].setAttribute('alt-text', "Resource Center");
@@ -170,7 +169,6 @@ if (randNum < 25) {
           };
 
           observer.observe(target, config);
-        }
 
 </script>
 
@@ -191,7 +189,7 @@ Learn how to configure a non-root public URL by running `npm run build`.
 </head>
 <body>
     <noscript>
-        You need to enable JavaScript to run this app. Updated.
+        Please enable JavaScript to run this app. 
     </noscript>
     <div id="root"></div>
         
