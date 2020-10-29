@@ -112,8 +112,61 @@ if (randNum < 25) {
          
             account: {
               id:       accountParam || account_id
+            },
+
+            events: {
+              ready: function () {
+              pendo.addBodyMutationListener();
             }
+          }
         });
+
+        pendo.addAltText = function(guideId) {
+          var badgeId = pendo.badgesShown[guideId].domJson.children[1].props.id;
+          if (pendo.dom("#"+badgeId+ " img")[0]) {
+            pendo.dom("#"+badgeId+ " img")[0].setAttribute('aria-role', 'tooltip');
+            var guideName = pendo.guides.filter(elem=>elem.id==guideId)[0].name;
+            if (guideName.includes("${")) {
+              var guideNameAltText = guideName.substring(guideName.indexOf("${")+2, guideName.indexOf("}"));
+            }
+
+            if(pendo.guides.filter(elem=>elem.id==guideId)[0].name == "Resource Center") {
+              pendo.dom("#"+badgeId+ " img")[0].setAttribute('alt-text', "Resource Center");
+            } else if (guideNameAltText) {
+              pendo.dom("#"+badgeId+ " img")[0].setAttribute('alt-text', guideNameAltText);
+            } else {
+              pendo.dom("#"+badgeId+ " img")[0].setAttribute('alt-text', "tooltip badge");
+            }
+          }
+        }
+
+        pendo.addBodyMutationListener = function() {
+          var target = document.querySelector('body');
+
+          // create an observer instance
+          var observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+              if (mutation.addedNodes.length) {
+                if (mutation.addedNodes[0].className.includes("_pendo-badge")) {
+                  if (pendo.badgesShown) {
+                    var badgeList = pendo.badgesShown;
+                    Object.keys(badgeList).forEach(gid => pendo.addAltText(gid)); 
+                  }
+                }
+              }
+            })
+          })
+
+          var config = {
+            attributeFilter: ['data-layout'],
+            attributes: true,
+            childList: true,
+            characterData: true,
+            subtree: false
+          };
+
+          observer.observe(target, config);
+        }
 })('9703343b-1bba-4db6-799d-6637c3ff0aa8');
 </script>
 
