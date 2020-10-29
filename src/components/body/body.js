@@ -155,7 +155,7 @@ export default class Body extends React.Component {
 						</h1>
 					</div>
 					<div className="main-content">
-					<a id="liveagent_button_online_5734T000000TfQo" href="javascript://Chat" onclick="liveagent.startChat('5734T000000TfQo')">OH YEAH</a><div id="liveagent_button_offline_5734T000000TfQo">Offline</div>
+					
 						<Main />
 					</div>
 				</div>
