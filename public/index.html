@@ -111,6 +111,24 @@ if (randNum < 25) {
         //  2) If the badge has a string in the guide name within #[ ], then make the
         //     alt-text that string
         //  3) Otherwise, just default the alt-text to "tooltip badge"
+        
+        pendo.initialize({
+            visitor: {
+              id:       visitorParam || visitor || 'VISITOR-UNIQUE-ID',
+              role:     role || 'user'
+            },
+         
+            account: {
+              id:       accountParam || account_id
+            },
+
+            events: {
+              ready: function () {
+              pendo.addBodyMutationListener();
+            }
+          }
+        });
+
         pendo.addAltText = function(guideId) {
           var badgeId = pendo.badgesShown[guideId].domJson.children[1].props.id;
           if (pendo.dom("#"+badgeId+ " img")[0]) {
