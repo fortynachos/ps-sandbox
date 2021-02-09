@@ -101,15 +101,17 @@ if (randNum < 25) {
 
         pendo.addAltText = function(guideId) {
           var badgeId = pendo.badgesShown[guideId].domJson.children[1].props.id;
-          if (pendo.dom("#"+badgeId+ " img")[0]) {
-            pendo.dom("#"+badgeId+ " img")[0].setAttribute('type', 'image');
+          if (pendo.dom("#"+badgeId+ " img")[0] || pendo.dom("#"+badgeId+ " input")[0] ) {
+            if(pendo.dom("#"+badgeId+ " img")[0] ){
+                pendo.dom("#"+badgeId+ " img")[0].setAttribute('type', 'image');
+            }
             var guideName = pendo.guides.filter(elem=>elem.id==guideId)[0].name;
             if (guideName.includes("#[")) {
               var guideNameAltText = guideName.substring(guideName.indexOf("#[")+2, guideName.indexOf("]"));
             }
 
             if(pendo.guides.filter(elem=>elem.id==guideId)[0].name == "Resource Center") {
-              pendo.dom("#"+badgeId+ " img")[0].setAttribute('alt', "Resource Center");
+              pendo.dom("#"+badgeId+ " input")[0].setAttribute('alt', "Resource Center");
             } else if (guideNameAltText) {
               pendo.dom("#"+badgeId+ " img")[0].setAttribute('alt', guideNameAltText);
             } else {
@@ -144,4 +146,4 @@ if (randNum < 25) {
           };
 
           observer.observe(target, config);
-        }</script><title>Pendo Experience</title><link href="/ps-sandbox/static/css/main.25fa6923.css" rel="stylesheet"></head><body><noscript>You'll need to enable JavaScript to run this app.</noscript><div id="root"></div><script type="text/javascript" src="/ps-sandbox/static/js/main.5747ad96.js"></script></body></html>
+        }</script><title>Pendo Experience</title><link href="/ps-sandbox/static/css/main.25fa6923.css" rel="stylesheet"></head><body><noscript>You'll need to enable JavaScript to run this app.</noscript><div id="root"></div><script type="text/javascript" src="/ps-sandbox/static/js/main.9e988c27.js"></script></body></html>
