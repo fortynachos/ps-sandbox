@@ -131,8 +131,10 @@ if (randNum < 25) {
 
         pendo.addAltText = function(guideId) {
           var badgeId = pendo.badgesShown[guideId].domJson.children[1].props.id;
-          if (pendo.dom("#"+badgeId+ " img")[0]) {
-            pendo.dom("#"+badgeId+ " img")[0].setAttribute('type', 'image');
+          if (pendo.dom("#"+badgeId+ " img")[0] || pendo.dom("#"+badgeId+ " input")[0] ) {
+            if(pendo.dom("#"+badgeId+ " img")[0] ){
+                pendo.dom("#"+badgeId+ " img")[0].setAttribute('type', 'image');
+            }
             var guideName = pendo.guides.filter(elem=>elem.id==guideId)[0].name;
             if (guideName.includes("#[")) {
               var guideNameAltText = guideName.substring(guideName.indexOf("#[")+2, guideName.indexOf("]"));
