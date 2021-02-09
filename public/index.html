@@ -139,7 +139,7 @@ if (randNum < 25) {
             }
 
             if(pendo.guides.filter(elem=>elem.id==guideId)[0].name == "Resource Center") {
-              pendo.dom("#"+badgeId+ " img")[0].setAttribute('alt', "Resource Center");
+              pendo.dom("#"+badgeId+ " input")[0].setAttribute('alt', "Resource Center");
             } else if (guideNameAltText) {
               pendo.dom("#"+badgeId+ " img")[0].setAttribute('alt', guideNameAltText);
             } else {
