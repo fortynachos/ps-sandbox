@@ -5,7 +5,7 @@
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "recharts": "^1.0.0-beta.10"
+    "recharts": "^2.1.14"
   },
   "devDependencies": {
     "react-scripts": "1.1.1"
