@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><link href="/ps-sandbox/static/css/main.57ce9abe.css" rel="stylesheet"></head><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="theme-color" content="#000000"><link rel="manifest" href="/ps-sandbox/manifest.json"><link rel="shortcut icon" href="/ps-sandbox/favicon.ico"><style>@import url(https://fonts.googleapis.com/css2?family=Public+Sans&display=swap);@import url(https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;400&display=swap);</style><script type="text/javascript" src="https://platform.cloud.coveo.com/rest/organizations/paloaltonetworksintranetsandbox2/pages/05155117-46ee-4aa6-96f7-169c216403f1/inappwidget/loader" async></script><script defer="defer" src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script><script type="text/javascript">var accounts = [
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="theme-color" content="#000000"><link rel="manifest" href="/ps-sandbox/manifest.json"><link rel="shortcut icon" href="/ps-sandbox/favicon.ico"><style>@import url(https://fonts.googleapis.com/css2?family=Public+Sans&display=swap);@import url(https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;400&display=swap);</style><script type="text/javascript" src="https://platform.cloud.coveo.com/rest/organizations/paloaltonetworksintranetsandbox2/pages/05155117-46ee-4aa6-96f7-169c216403f1/inappwidget/loader" async></script><script defer="defer" src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script><script type="text/javascript">var accounts = [
     "Stark Industries",
     "Wayne Enterprises",
     "Hooli",
@@ -80,7 +80,8 @@ if (randNum < 25) {
     pendo.initialize({
         visitor: {
           id:       visitorParam || visitor || 'VISITOR-UNIQUE-ID',
-          role:     role || 'user'
+          role:     role || 'user',
+          tags:     ['Feature']
         },
      
         account: {
@@ -89,7 +90,7 @@ if (randNum < 25) {
 
         events: {
           ready: function () {
-          pendo.addBodyMutationListener();
+          //pendo.addBodyMutationListener();
         }
       }
     });
@@ -219,4 +220,4 @@ if (randNum < 25) {
       };
 
       observer.observe(target, config);
-    }</script><script type="text/javascript" src="/ps-sandbox/static/js/main.ab2b5bab.js"></script></head></html>
+    }</script><title>Pendo Experience</title><link href="/ps-sandbox/static/css/main.57ce9abe.css" rel="stylesheet"></head><body><noscript>You'll need to enable JavaScript to run this app.</noscript><div id="root"></div><script type="text/javascript" src="/ps-sandbox/static/js/main.ab2b5bab.js"></script></body></html>
