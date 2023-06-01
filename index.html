@@ -90,8 +90,8 @@ if (randNum < 25) {
         },
 
         events: {
-          ready: function () {
-            console.log("change account listener active");
+          guidesLoaded: function () {
+            console.log("guides loaded account listener active");
             setTimeout(() => {
               pendo.findGuideById('M7Wh5BHXTEfQdCMGjG-QWyaa0Ds@EZaS20apqnEURi1kpxpRmEYvUj4').steps[0].before("teardown", function() {
                 pendo.identify(pendo.visitorId, "local_1");
